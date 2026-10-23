@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "name": "freq_accuracy",
+  "dut": "频率精度离线验收",
+  "source": {
+    "instrument": "dg4062",
+    "channel": 1,
+    "waveform": "sine",
+    "amplitude_vpp": 1.0,
+    "offset_v": 0.0,
+    "sweep": {
+      "start_hz": 1000.0,
+      "stop_hz": 100000.0,
+      "points": 5,
+      "spacing": "log"
+    }
+  },
+  "capture": {
+    "source": "scope",
+    "channel": 1,
+    "settle_ms": 100,
+    "samples": 16384
+  },
+  "simulation": {
+    "gain_db": 0.0,
+    "noise_snr_db": 75.0,
+    "frequency_error_ppm": 25.0,
+    "harmonics_dbc": {"2": -75.0, "3": -80.0},
+    "seed": 20260727
+  },
+  "metrics": ["frequency_accuracy", "snr"],
+  "pass": {
+    "frequency_error_ppm_max": 100.0,
+    "snr_db_min": 55.0
+  },
+  "safety": {
+    "amplitude_vpp_max": 5.0
+  }
+}
+

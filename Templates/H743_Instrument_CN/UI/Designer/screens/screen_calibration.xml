@@ -1,0 +1,96 @@
+<screen>
+	<styles>
+		<style name="result_cal_panel" bg_color="0x16191d" bg_opa="100%" border_color="0x3b4148" border_width="1" radius="3" pad_all="0" />
+		<style name="result_cal_field" bg_color="0x272c32" bg_opa="100%" border_color="0x626b75" border_width="1" radius="3" text_color="0xf2f3f4" />
+		<style name="result_cal_primary" bg_color="0x176b87" bg_opa="100%" border_color="0x80d6ff" border_width="1" radius="3" text_color="0xffffff" />
+		<style name="result_cal_safe" bg_color="0x2abf70" bg_opa="100%" border_width="0" radius="3" text_color="0x04130b" />
+		<style name="result_cal_stop" bg_color="0xd84b4b" bg_opa="100%" border_width="0" radius="3" text_color="0xffffff" />
+		<style name="result_cal_pending" bg_color="0x7a5b16" bg_opa="100%" border_color="0xffd43b" border_width="1" radius="3" text_color="0xffffff" />
+	</styles>
+
+	<view>
+		<style name="style_screen" />
+		<lv_obj x="0" y="0" width="800" height="50" scrollable="false" scrollbar_mode="off">
+			<style name="result_cal_panel" />
+			<lv_label text="AD / DA 校准" x="16" y="16" style_text_color="0x80d6ff" />
+			<lv_button name="cal_internal_button" x="320" y="7" width="108" height="36"><style name="result_cal_primary" /><lv_label text="内部" align="center" /></lv_button>
+			<lv_button name="cal_external_button" x="436" y="7" width="108" height="36"><style name="result_cal_field" /><lv_label text="外部" align="center" /></lv_button>
+			<lv_label name="cal_exclusive_label" text="独占" x="580" y="16" style_text_color="0xffd43b" />
+			<lv_label name="cal_safe_label" text="安全" x="738" y="16" style_text_color="0x72eaa5" />
+		</lv_obj>
+
+		<lv_obj x="8" y="58" width="224" height="358" scrollable="false" scrollbar_mode="off">
+			<style name="result_cal_panel" />
+			<lv_label text="信号源与限幅" x="12" y="10" style_text_color="0x80d6ff" />
+			<lv_label text="ADDA 信号源" x="12" y="38" style_text_color="0x9aa4ad" />
+			<lv_dropdown name="cal_source_dropdown" x="12" y="56" width="200" height="36" options="DAC1 -&gt; ADC&#10;DAC2 -&gt; ADC&#10;外部输入" selected="0"><style name="result_cal_field" /></lv_dropdown>
+			<lv_label text="校准项目" x="12" y="102" style_text_color="0x9aa4ad" />
+			<lv_dropdown name="cal_item_dropdown" x="12" y="120" width="200" height="36" options="增益 / 偏置&#10;频率响应&#10;通道幅相&#10;安全幅度限值" selected="0"><style name="result_cal_field" /></lv_dropdown>
+			<lv_label text="下限" x="12" y="170" style_text_color="0x9aa4ad" />
+			<lv_textarea name="cal_lower_limit" x="118" y="162" width="94" height="34" one_line="true" text="0.00 V"><style name="result_cal_field" /></lv_textarea>
+			<lv_label text="上限" x="12" y="210" style_text_color="0x9aa4ad" />
+			<lv_textarea name="cal_upper_limit" x="118" y="202" width="94" height="34" one_line="true" text="3.00 V"><style name="result_cal_field" /></lv_textarea>
+			<lv_label text="爬升步进" x="12" y="250" style_text_color="0x9aa4ad" />
+			<lv_textarea name="cal_ramp_step" x="118" y="242" width="94" height="34" one_line="true" text="50 mV"><style name="result_cal_field" /></lv_textarea>
+			<lv_label text="驻留时间" x="12" y="290" style_text_color="0x9aa4ad" />
+			<lv_textarea name="cal_dwell_time" x="118" y="282" width="94" height="34" one_line="true" text="25 ms"><style name="result_cal_field" /></lv_textarea>
+			<lv_label name="cal_relay_label" text="继电器: P2-18 / P2-16" x="12" y="330" width="200" style_text_color="0x72eaa5" />
+		</lv_obj>
+
+		<lv_obj x="240" y="58" width="360" height="358" scrollable="false" scrollbar_mode="off">
+			<style name="result_cal_panel" />
+			<lv_label text="校准会话" x="12" y="10" style_text_color="0x80d6ff" />
+			<lv_label text="步骤" x="12" y="36" style_text_color="0x9aa4ad" />
+			<lv_label name="cal_step_label" text="空闲 / 等待启动" x="60" y="36" width="214" style_text_color="0x72eaa5" />
+			<lv_label text="点数" x="278" y="36" style_text_color="0x9aa4ad" />
+			<lv_label name="cal_points_label" text="0 / --" x="312" y="36" width="40" />
+			<lv_bar name="cal_progress_bar" x="12" y="58" width="336" height="14" min_value="0" max_value="100" value="0" />
+
+				<lv_obj x="12" y="86" width="336" height="176" scrollable="false" scrollbar_mode="off">
+					<style name="result_cal_field" />
+					<lv_label text="校准数据" x="10" y="8" style_text_color="0x80d6ff" />
+					<lv_label text="DAC 增益 / 偏置" x="10" y="36" width="194" style_text_color="0x9aa4ad" />
+					<lv_label text="未实现" x="208" y="36" width="114" style_text_align="right" />
+					<lv_label text="ADC 增益 / 偏置" x="10" y="62" width="194" style_text_color="0x9aa4ad" />
+					<lv_label text="未实现" x="208" y="62" width="114" style_text_align="right" />
+					<lv_label text="频率响应" x="10" y="88" width="194" style_text_color="0x9aa4ad" />
+					<lv_label text="未实现" x="208" y="88" width="114" style_text_align="right" />
+					<lv_label text="通道幅相" x="10" y="114" width="194" style_text_color="0x9aa4ad" />
+					<lv_label text="未实现" x="208" y="114" width="114" style_text_align="right" />
+					<lv_label text="安全幅度限值" x="10" y="140" width="194" style_text_color="0x9aa4ad" />
+					<lv_label text="暂定" x="208" y="140" width="114" style_text_align="right" style_text_color="0xff9f43" />
+			</lv_obj>
+
+			<lv_label text="错误" x="12" y="274" style_text_color="0x9aa4ad" />
+			<lv_label name="cal_error_label" text="--" x="70" y="274" width="278" />
+			<lv_obj x="12" y="294" width="336" height="54" scrollable="false" scrollbar_mode="off">
+				<style name="result_cal_field" />
+				<lv_label name="cal_storage_label" text="QSPI 未就绪" x="10" y="2" width="316" style_text_color="0xff9f43" />
+				<lv_label name="cal_profile_label" text="生效: 旧   待用: 无" x="10" y="24" width="316" style_text_color="0x9aa4ad" />
+			</lv_obj>
+		</lv_obj>
+
+		<lv_obj x="608" y="58" width="184" height="358" scrollable="false" scrollbar_mode="off">
+			<style name="result_cal_panel" />
+			<lv_label text="校准控制" x="14" y="10" style_text_color="0x80d6ff" />
+			<lv_button x="8" y="32" width="168" height="32"><style name="result_cal_primary" /><lv_label text="主页" align="center" /><screen_create_event screen="screen_control" /></lv_button>
+			<lv_button name="cal_start_button" x="8" y="70" width="168" height="34"><style name="result_cal_safe" /><lv_label text="启动" align="center" /></lv_button>
+			<lv_button name="cal_stop_button" x="8" y="110" width="168" height="34"><style name="result_cal_stop" /><lv_label text="停止" align="center" /></lv_button>
+			<lv_button name="cal_export_button" x="8" y="152" width="168" height="34"><style name="result_cal_field" /><lv_label text="导出数据" align="center" /></lv_button>
+			<lv_button name="cal_import_button" x="8" y="192" width="168" height="34"><style name="result_cal_field" /><lv_label text="导入结果" align="center" /></lv_button>
+			<lv_button name="cal_confirm_button" x="8" y="234" width="80" height="34"><style name="result_cal_safe" /><lv_label text="确认" align="center" /></lv_button>
+			<lv_button name="cal_cancel_button" x="96" y="234" width="80" height="34"><style name="result_cal_stop" /><lv_label text="取消" align="center" /></lv_button>
+			<lv_button name="cal_apply_button" x="8" y="278" width="168" height="38"><style name="result_cal_pending" /><lv_label text="立即应用" align="center" /></lv_button>
+			<lv_label text="应用后:" x="12" y="324" style_text_color="0x9aa4ad" />
+			<lv_label name="cal_apply_hint" text="撤销应用" x="100" y="324" width="72" style_text_align="right" style_text_color="0xffd43b" />
+		</lv_obj>
+
+		<lv_obj x="0" y="424" scrollable="false" scrollbar_mode="off">
+			<style name="style_nav" />
+			<lv_button x="16" y="8" width="180" height="40"><style name="style_nav_button" /><lv_label text="监测" align="center" /><screen_load_event screen="screen_monitor" /></lv_button>
+			<lv_button x="212" y="8" width="180" height="40"><style name="style_nav_button" /><lv_label text="测试" align="center" /><screen_create_event screen="screen_test" /></lv_button>
+			<lv_button x="408" y="8" width="180" height="40"><style name="style_nav_button" /><style name="style_nav_button_active" /><lv_label text="校准" align="center" /></lv_button>
+			<lv_button x="604" y="8" width="180" height="40"><style name="style_nav_button" /><lv_label text="系统" align="center" /><screen_create_event screen="screen_system" /></lv_button>
+		</lv_obj>
+	</view>
+</screen>

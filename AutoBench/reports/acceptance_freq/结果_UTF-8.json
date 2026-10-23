@@ -1,0 +1,100 @@
+{
+  "plan_name": "freq_accuracy",
+  "plan_path": "F:\\STM32\\AutoBench\\plans\\freq_accuracy.json",
+  "dut": "频率精度离线验收",
+  "metrics": [
+    "frequency_accuracy",
+    "snr"
+  ],
+  "source_amplitude_vpp": 1.0,
+  "global_amplitude_limit_vpp": 5.0,
+  "capture_source": "simulate",
+  "verification_scope": "pure_offline_software",
+  "hardware_access_attempted": false,
+  "instrument_output_changed": false,
+  "generated_at": "2026-07-27T03:14:15+08:00",
+  "passed": true,
+  "checks": [
+    {
+      "name": "snr_db_min",
+      "actual": 60.254870012330166,
+      "limit": 55.0,
+      "passed": true,
+      "description": "最小 SNR 60.255 dB >= 55.000 dB"
+    },
+    {
+      "name": "frequency_error_ppm_max",
+      "actual": 27.057276215692962,
+      "limit": 100.0,
+      "passed": true,
+      "description": "最大频率绝对误差 27.057 ppm <= 100.000 ppm"
+    }
+  ],
+  "rows": [
+    {
+      "index": 1,
+      "expected_frequency_hz": 1000.0,
+      "measured_frequency_hz": 1000.0270503898004,
+      "frequency_error_ppm": 27.050389800365338,
+      "input_vpp": 1.0,
+      "output_vpp": 1.000214815394275,
+      "gain_db": 0.0018656624278979936,
+      "thd_percent": 0.02058846149072034,
+      "snr_db": 60.25540600014768,
+      "capture_source": "simulate",
+      "passed": true
+    },
+    {
+      "index": 2,
+      "expected_frequency_hz": 3162.2776601683795,
+      "measured_frequency_hz": 3162.3632227885014,
+      "frequency_error_ppm": 27.057276215692962,
+      "input_vpp": 1.0,
+      "output_vpp": 1.0001925905202924,
+      "gain_db": 0.001672658940639164,
+      "thd_percent": 0.020734916457895478,
+      "snr_db": 60.255009228770575,
+      "capture_source": "simulate",
+      "passed": true
+    },
+    {
+      "index": 3,
+      "expected_frequency_hz": 10000.0,
+      "measured_frequency_hz": 10000.270490506988,
+      "frequency_error_ppm": 27.04905069876986,
+      "input_vpp": 1.0,
+      "output_vpp": 1.0001903207457716,
+      "gain_db": 0.0016529477034757573,
+      "thd_percent": 0.020720158692752233,
+      "snr_db": 60.29560452165356,
+      "capture_source": "simulate",
+      "passed": true
+    },
+    {
+      "index": 4,
+      "expected_frequency_hz": 31622.776601683792,
+      "measured_frequency_hz": 31623.632127497684,
+      "frequency_error_ppm": 27.054101689657983,
+      "input_vpp": 1.0,
+      "output_vpp": 1.000242990975742,
+      "gain_db": 0.0021103364123710383,
+      "thd_percent": 0.02040841497884401,
+      "snr_db": 60.254870012330166,
+      "capture_source": "simulate",
+      "passed": true
+    },
+    {
+      "index": 5,
+      "expected_frequency_hz": 100000.0,
+      "measured_frequency_hz": 100002.70487528907,
+      "frequency_error_ppm": 27.04875289069605,
+      "input_vpp": 1.0,
+      "output_vpp": 1.0002137314007467,
+      "gain_db": 0.0018562489967909068,
+      "thd_percent": 0.02058705184849814,
+      "snr_db": 60.276874920577406,
+      "capture_source": "simulate",
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "am_10k_1k",
+  "kind": "am",
+  "analysis_mode": "peak",
+  "sample_rate_hz": 204800,
+  "frames": 8,
+  "dc_code": 2048,
+  "carrier_hz": 10000,
+  "modulation_hz": 1000,
+  "depth": 0.5,
+  "amplitude_code": 700,
+  "snr_db": 40,
+  "seed": 20260727
+}
+

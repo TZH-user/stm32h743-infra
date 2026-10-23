@@ -1,0 +1,7 @@
+<project name="signal_separation_ui" lvgl_version="9.5.0">
+	<targets>
+		<target name="h743_rgb_800x480">
+			<display width="800" height="480" />
+		</target>
+	</targets>
+</project>

@@ -1,0 +1,41 @@
+<screen>
+	<view>
+		<style name="style_screen" />
+
+		<lv_obj x="0" y="0"><style name="style_header" /><lv_label text="System / Diagnostics" x="16" y="16" /></lv_obj>
+
+		<lv_obj x="16" y="64" width="500" height="344">
+			<style name="style_card" />
+			<lv_label text="Runtime Diagnostics" x="4" y="2" />
+			<lv_label text="Analysis state" x="12" y="48" style_text_color="#color_text_muted" />
+			<lv_label bind_text="analysis_state" x="300" y="48" />
+			<lv_label text="Actual sample rate" x="12" y="88" style_text_color="#color_text_muted" />
+			<lv_label bind_text="sample_rate" x="300" y="88" />
+			<lv_label text="FFT size" x="12" y="128" style_text_color="#color_text_muted" />
+			<lv_label bind_text="fft_size" x="300" y="128" />
+			<lv_label text="Successful runs" x="12" y="168" style_text_color="#color_text_muted" />
+			<lv_label text="12" x="300" y="168" />
+			<lv_label text="Failed runs" x="12" y="208" style_text_color="#color_text_muted" />
+			<lv_label text="0" x="300" y="208" />
+			<lv_label text="Touch input" x="12" y="248" style_text_color="#color_text_muted" />
+			<lv_label text="ONLINE" x="300" y="248" style_text_color="#color_success" />
+		</lv_obj>
+
+		<lv_obj x="528" y="64" width="256" height="344">
+			<style name="style_card" />
+			<lv_label text="Quick Tools" x="4" y="2" />
+			<lv_button x="4" y="48" width="228" height="48"><style name="style_secondary_button" /><lv_label text="Touch Test" align="center" /></lv_button>
+			<lv_button x="4" y="108" width="228" height="48"><style name="style_secondary_button" /><lv_label text="Display Test" align="center" /></lv_button>
+			<lv_button x="4" y="168" width="228" height="48"><style name="style_secondary_button" /><lv_label text="Memory Status" align="center" /></lv_button>
+			<lv_label text="UI Template v0.1" x="4" y="276" style_text_color="#color_text_muted" />
+		</lv_obj>
+
+		<lv_obj x="0" y="424">
+			<style name="style_nav" />
+			<lv_button x="16" y="8" width="180" height="40"><style name="style_nav_button" /><lv_label text="Monitor" align="center" /><screen_load_event screen="screen_monitor" /></lv_button>
+			<lv_button x="212" y="8" width="180" height="40"><style name="style_nav_button" /><lv_label text="Test" align="center" /><screen_create_event screen="screen_calibration" /></lv_button>
+			<lv_button x="408" y="8" width="180" height="40"><style name="style_nav_button" /><lv_label text="Calibration" align="center" /><screen_create_event screen="screen_results" /></lv_button>
+			<lv_button x="604" y="8" width="180" height="40"><style name="style_nav_button" /><style name="style_nav_button_active" /><lv_label text="System" align="center" /></lv_button>
+		</lv_obj>
+	</view>
+</screen>

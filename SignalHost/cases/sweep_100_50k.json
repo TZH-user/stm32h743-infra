@@ -1,0 +1,14 @@
+{
+  "name": "sweep_100_50k",
+  "kind": "sweep",
+  "analysis_mode": "peak",
+  "sample_rate_hz": 204800,
+  "frames": 64,
+  "dc_code": 2048,
+  "amplitude_code": 900,
+  "snr_db": 40,
+  "seed": 20260727,
+  "start_hz": 100,
+  "stop_hz": 50000
+}
+

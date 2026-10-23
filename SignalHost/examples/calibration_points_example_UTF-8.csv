@@ -1,0 +1,4 @@
+original_index,reference_mv,measured_code,timestamp,crc,raw_line,included,exclusion_reason
+0,-1000.0,-700.0,2026-07-27T00:00:00+00:00,11111111,[CAL] EXT example,true,
+1,0.0,100.0,2026-07-27T00:00:01+00:00,22222222,[CAL] EXT example,true,
+2,1000.0,900.0,2026-07-27T00:00:02+00:00,33333333,[CAL] EXT example,true,

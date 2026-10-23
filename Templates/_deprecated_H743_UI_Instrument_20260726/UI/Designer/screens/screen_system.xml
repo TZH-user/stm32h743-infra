@@ -1,0 +1,41 @@
+<screen>
+	<view>
+		<style name="style_screen" />
+
+		<lv_obj x="0" y="0"><style name="style_header" /><lv_label text="系统 / 诊断" x="16" y="16" /></lv_obj>
+
+		<lv_obj x="16" y="64" width="500" height="344">
+			<style name="style_card" />
+			<lv_label text="运行诊断" x="4" y="2" />
+			<lv_label text="分析状态" x="12" y="48" style_text_color="#color_text_muted" />
+			<lv_label bind_text="analysis_state" x="300" y="48" />
+			<lv_label text="实际采样率" x="12" y="88" style_text_color="#color_text_muted" />
+			<lv_label bind_text="sample_rate" x="300" y="88" />
+			<lv_label text="FFT 点数" x="12" y="128" style_text_color="#color_text_muted" />
+			<lv_label bind_text="fft_size" x="300" y="128" />
+			<lv_label text="成功次数" x="12" y="168" style_text_color="#color_text_muted" />
+			<lv_label text="12" x="300" y="168" />
+			<lv_label text="失败次数" x="12" y="208" style_text_color="#color_text_muted" />
+			<lv_label text="0" x="300" y="208" />
+			<lv_label text="触摸输入" x="12" y="248" style_text_color="#color_text_muted" />
+			<lv_label text="在线" x="300" y="248" style_text_color="#color_success" />
+		</lv_obj>
+
+		<lv_obj x="528" y="64" width="256" height="344">
+			<style name="style_card" />
+			<lv_label text="快捷工具" x="4" y="2" />
+			<lv_button x="4" y="48" width="228" height="48"><style name="style_secondary_button" /><lv_label text="触摸测试" align="center" /></lv_button>
+			<lv_button x="4" y="108" width="228" height="48"><style name="style_secondary_button" /><lv_label text="显示测试" align="center" /></lv_button>
+			<lv_button x="4" y="168" width="228" height="48"><style name="style_secondary_button" /><lv_label text="内存状态" align="center" /></lv_button>
+			<lv_label text="UI 模板 v0.1" x="4" y="276" style_text_color="#color_text_muted" />
+		</lv_obj>
+
+		<lv_obj x="0" y="424">
+			<style name="style_nav" />
+			<lv_button x="16" y="8" width="180" height="40"><style name="style_nav_button" /><lv_label text="监测" align="center" /><screen_load_event screen="screen_monitor" /></lv_button>
+			<lv_button x="212" y="8" width="180" height="40"><style name="style_nav_button" /><lv_label text="测试" align="center" /><screen_create_event screen="screen_test" /></lv_button>
+			<lv_button x="408" y="8" width="180" height="40"><style name="style_nav_button" /><lv_label text="校准" align="center" /><screen_create_event screen="screen_calibration" /></lv_button>
+			<lv_button x="604" y="8" width="180" height="40"><style name="style_nav_button" /><style name="style_nav_button_active" /><lv_label text="系统" align="center" /></lv_button>
+		</lv_obj>
+	</view>
+</screen>

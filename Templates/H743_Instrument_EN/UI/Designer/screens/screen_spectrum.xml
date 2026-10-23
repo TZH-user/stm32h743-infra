@@ -1,0 +1,33 @@
+<screen>
+	<styles>
+		<style name="scope_full_panel" bg_color="0x16191d" bg_opa="100%" border_color="0x3b4148" border_width="1" radius="2" pad_all="0" />
+		<style name="scope_full_plot" bg_color="0x030405" bg_opa="100%" border_color="0x59616a" border_width="1" radius="0" pad_all="4" line_color="0x354047" />
+		<style name="scope_full_key" bg_color="0x272c32" bg_opa="100%" border_color="0x626b75" border_width="1" radius="3" text_color="0xf2f3f4" />
+		<style name="scope_full_trace_line" line_width="2" />
+		<style name="scope_full_trace_point" width="2" height="2" radius="1" border_width="0" bg_opa="100%" />
+	</styles>
+	<view>
+		<style name="style_screen" />
+		<lv_obj x="0" y="0" width="800" height="50">
+			<style name="scope_full_panel" />
+			<lv_button x="8" y="7" width="88" height="36"><style name="scope_full_key" /><lv_label text="Back" align="center" /><screen_load_event screen="screen_monitor" /></lv_button>
+			<lv_label name="ui_title" text="Full waveform" x="112" y="16" style_text_color="0xffdf3f" />
+			<lv_dropdown name="ui_mode_dropdown" x="282" y="7" width="210" height="36" options="FFT Spectrum&#10;Live Wave" selected="1"><style name="scope_full_key" /></lv_dropdown>
+			<lv_label name="ui_spectrum_info" text="128-pt continuous ADC sampling" x="520" y="16" style_text_color="0x80d6ff" />
+		</lv_obj>
+		<lv_chart name="ui_chart" x="8" y="60" width="784" height="348" type="line" point_count="32" hor_div_line_count="8" ver_div_line_count="10">
+			<style name="scope_full_plot" />
+			<style name="scope_full_trace_line" selector="items" />
+			<style name="scope_full_trace_point" selector="indicator" />
+			<lv_chart-axis axis="primary_y" min_value="0" max_value="100" />
+			<lv_chart-series color="0xffdf3f" axis="primary_y" values="50 65 76 80 73 59 42 27 20 25 39 56 71 79 78 66 50 34 22 21 31 46 63 75 80 74 61 44 29 21 24 37" />
+		</lv_chart>
+		<lv_obj x="8" y="416" width="784" height="56">
+			<style name="scope_full_panel" />
+			<lv_label text="CH1" x="12" y="18" style_text_color="0xffdf3f" /><lv_label text="1.00 V/div" x="52" y="18" />
+			<lv_label text="H" x="206" y="18" style_text_color="0x80d6ff" /><lv_label text="20.0 us/div" x="230" y="18" />
+			<lv_label text="Trigger" x="396" y="18" style_text_color="0x72eaa5" /><lv_label text="CH1 rising" x="442" y="18" />
+			<lv_label text="Live snapshot" x="650" y="18" style_text_color="0x72eaa5" />
+		</lv_obj>
+	</view>
+</screen>

@@ -1,0 +1,12 @@
+list(
+  APPEND
+  LV_EDITOR_PROJECT_SOURCES
+  ${CMAKE_CURRENT_LIST_DIR}/components/app_metric_card_gen.c
+  ${CMAKE_CURRENT_LIST_DIR}/screens/screen_calibration_gen.c
+  ${CMAKE_CURRENT_LIST_DIR}/screens/screen_control_gen.c
+  ${CMAKE_CURRENT_LIST_DIR}/screens/screen_monitor_gen.c
+  ${CMAKE_CURRENT_LIST_DIR}/screens/screen_results_gen.c
+  ${CMAKE_CURRENT_LIST_DIR}/screens/screen_spectrum_gen.c
+  ${CMAKE_CURRENT_LIST_DIR}/screens/screen_system_gen.c
+  ${CMAKE_CURRENT_LIST_DIR}/signal_separation_ui_gen.c
+  ${CMAKE_CURRENT_LIST_DIR}/signal_separation_ui.c)

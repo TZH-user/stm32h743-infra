@@ -1,0 +1,3 @@
+# SignalHost calibration replay UTF-8 v1: disconnect after queue acknowledgement
+RX|[CTRL] OK CAL EXT POINT queued
+DISCONNECT|link lost before final business result

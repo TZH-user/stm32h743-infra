@@ -1,0 +1,57 @@
+{
+  "plan_name": "board_vcp_demo",
+  "plan_path": "F:\\STM32\\AutoBench\\plans\\board_vcp_demo.json",
+  "dut": "开发板 VCP 导出的单频 CSV",
+  "metrics": [
+    "vpp_ratio_db",
+    "thd",
+    "snr",
+    "frequency_accuracy"
+  ],
+  "source_amplitude_vpp": 1.0,
+  "global_amplitude_limit_vpp": 5.0,
+  "capture_source": "board_vcp",
+  "verification_scope": "pure_offline_software",
+  "hardware_access_attempted": false,
+  "instrument_output_changed": false,
+  "generated_at": "2026-07-27T03:19:29+08:00",
+  "passed": true,
+  "checks": [
+    {
+      "name": "thd_percent_max",
+      "actual": 0.10805060999192026,
+      "limit": 2.0,
+      "passed": true,
+      "description": "最大 THD 0.10805% <= 2.00000%"
+    },
+    {
+      "name": "snr_db_min",
+      "actual": 74.15082867578599,
+      "limit": 40.0,
+      "passed": true,
+      "description": "最小 SNR 74.151 dB >= 40.000 dB"
+    },
+    {
+      "name": "frequency_error_ppm_max",
+      "actual": 60.16693576157195,
+      "limit": 500.0,
+      "passed": true,
+      "description": "最大频率绝对误差 60.167 ppm <= 500.000 ppm"
+    }
+  ],
+  "rows": [
+    {
+      "index": 1,
+      "expected_frequency_hz": 1000.0,
+      "measured_frequency_hz": 1000.0601669357616,
+      "frequency_error_ppm": 60.16693576157195,
+      "input_vpp": 1.0,
+      "output_vpp": 0.98,
+      "gain_db": -0.175478486150103,
+      "thd_percent": 0.10805060999192026,
+      "snr_db": 74.15082867578599,
+      "capture_source": "board_vcp",
+      "passed": true
+    }
+  ]
+}

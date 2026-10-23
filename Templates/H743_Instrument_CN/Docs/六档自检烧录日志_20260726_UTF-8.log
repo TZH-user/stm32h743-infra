@@ -1,0 +1,46 @@
+{
+  "ok": false,
+  "argv": [
+    "E:\\ST\\STM32CubeProgrammer\\bin\\STM32_Programmer_CLI.exe",
+    "-c",
+    "port=SWD",
+    "mode=HOTPLUG",
+    "freq=100",
+    "-d",
+    "F:\\STM32\\stm32project\\VSCodeCMAKEProject\\signal_separation\\build\\Debug\\signal_separation.hex",
+    "-v",
+    "-rst",
+    "-run"
+  ],
+  "cwd": null,
+  "returncode": 1,
+  "stdout_tail": "      -------------------------------------------------------------------\r\n                       STM32CubeProgrammer v2.23.0                  \r\n      -------------------------------------------------------------------\r\n\r\nST-LINK SN  : 002E00443234511337333934\r\nST-LINK FW  : V3J17M10B6S1\r\nBoard       : STLINK-V3MODS\r\nVoltage     : 3.29V\r\nSWD freq    : 50 KHz\r\nConnect mode: Hot Plug\r\nReset mode  : Software reset\r\nDevice ID   : 0x450\r\nRevision ID : Rev V\r\nDevice name : STM32H7xx\r\nNVM size    : 2 MBytes\r\nDevice type : MCU\r\nDevice CPU  : Cortex-M7\r\nBL Version  : 0x91\r\n\r\n\r\n\r\nOpening and parsing file: signal_separation.hex\r\n\r\n\r\nMemory Programming ...\r\n  File          : signal_separation.hex\r\n  Size          : 878.18 KB \r\n  Address       : 0x08000000\r\n\r\n\r\nErasing memory corresponding to segment 0:\r\nErasing internal memory sectors [0 6]\r\nError: failed to erase memory\r\n\r\n\r\nError: failed to erase memory\r\n",
+  "stderr_tail": "",
+  "hardware_required": true,
+  "recovery_hint": {
+    "kind": "hotplug_erase_failure",
+    "observed_mode": "HOTPLUG",
+    "recommended_mode": "UR",
+    "recommended_frequency_khz": "100",
+    "preview": {
+      "argv": [
+        "E:\\ST\\STM32CubeProgrammer\\bin\\STM32_Programmer_CLI.exe",
+        "-c",
+        "port=SWD",
+        "mode=UR",
+        "freq=100",
+        "-d",
+        "F:\\STM32\\stm32project\\VSCodeCMAKEProject\\signal_separation\\build\\Debug\\signal_separation.hex",
+        "-v",
+        "-rst",
+        "-run"
+      ],
+      "run": false,
+      "note": "This is a preview only. Re-run explicitly with mode=UR after checking target reset wiring."
+    },
+    "safety": [
+      "Do not automatically retry hardware actions.",
+      "Do not issue Mass Erase or modify Option Bytes."
+    ]
+  }
+}

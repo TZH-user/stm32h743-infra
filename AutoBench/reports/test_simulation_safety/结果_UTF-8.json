@@ -1,0 +1,56 @@
+{
+  "plan_name": "thd_1k",
+  "plan_path": "F:\\STM32\\AutoBench\\plans\\thd_1k.json",
+  "dut": "1 kHz 正弦失真与信噪比离线验收",
+  "metrics": [
+    "thd",
+    "snr",
+    "frequency_accuracy"
+  ],
+  "source_amplitude_vpp": 1.0,
+  "global_amplitude_limit_vpp": 5.0,
+  "capture_source": "simulate",
+  "verification_scope": "pure_offline_software",
+  "hardware_access_attempted": false,
+  "instrument_output_changed": false,
+  "generated_at": "2026-07-27T03:19:24+08:00",
+  "passed": true,
+  "checks": [
+    {
+      "name": "thd_percent_max",
+      "actual": 0.11316260667450583,
+      "limit": 1.0,
+      "passed": true,
+      "description": "最大 THD 0.11316% <= 1.00000%"
+    },
+    {
+      "name": "snr_db_min",
+      "actual": 67.95508824205834,
+      "limit": 50.0,
+      "passed": true,
+      "description": "最小 SNR 67.955 dB >= 50.000 dB"
+    },
+    {
+      "name": "frequency_error_ppm_max",
+      "actual": 5.486843027256327,
+      "limit": 100.0,
+      "passed": true,
+      "description": "最大频率绝对误差 5.487 ppm <= 100.000 ppm"
+    }
+  ],
+  "rows": [
+    {
+      "index": 1,
+      "expected_frequency_hz": 1000.0,
+      "measured_frequency_hz": 1000.0054868430273,
+      "frequency_error_ppm": 5.486843027256327,
+      "input_vpp": 1.0,
+      "output_vpp": 1.0003016545658183,
+      "gain_db": 0.002619743158636229,
+      "thd_percent": 0.11316260667450583,
+      "snr_db": 67.95508824205834,
+      "capture_source": "simulate",
+      "passed": true
+    }
+  ]
+}

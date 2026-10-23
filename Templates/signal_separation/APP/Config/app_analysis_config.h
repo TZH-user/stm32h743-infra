@@ -1,0 +1,118 @@
+#ifndef APP_CONFIG_APP_ANALYSIS_CONFIG_H_
+#define APP_CONFIG_APP_ANALYSIS_CONFIG_H_
+
+#include <stdint.h>
+
+/*
+ * 单帧采集/分析参数（UTF-8）。
+ * 当前 MainTask 直接调用 SignalDetect 模块；旧 Analysis Pipeline 不接入。
+ */
+#ifndef APP_ANALYSIS_RUN_ON_BOOT
+/* 1 = 上电自动识别一次；无论取值如何，屏幕 RUN 均可再次启动。 */
+#define APP_ANALYSIS_RUN_ON_BOOT                    1U
+#endif
+
+/* 正式固件为 1；真机重复性测试可临时覆盖，验收后必须恢复。 */
+#ifndef APP_ANALYSIS_BOOT_SESSION_COUNT
+#define APP_ANALYSIS_BOOT_SESSION_COUNT             1U
+#endif
+
+#if (APP_ANALYSIS_BOOT_SESSION_COUNT < 1U)
+#error "APP_ANALYSIS_BOOT_SESSION_COUNT must be at least 1"
+#endif
+
+/* 0 = 输出一帧 ADC 原始码值，1 = 计算并输出一次 FFT 频谱。 */
+#ifndef APP_ANALYSIS_DEFAULT_OUTPUT_TYPE
+#define APP_ANALYSIS_DEFAULT_OUTPUT_TYPE            0U
+#endif
+
+#if (APP_ANALYSIS_DEFAULT_OUTPUT_TYPE > 1U)
+#error "APP_ANALYSIS_DEFAULT_OUTPUT_TYPE must be 0 or 1"
+#endif
+
+#ifndef APP_ANALYSIS_DEFAULT_SAMPLE_RATE_HZ
+#define APP_ANALYSIS_DEFAULT_SAMPLE_RATE_HZ         256000UL
+#endif
+
+#ifndef APP_ANALYSIS_DEFAULT_FFT_SIZE
+#define APP_ANALYSIS_DEFAULT_FFT_SIZE               4096U
+#endif
+
+#ifndef APP_ANALYSIS_DEFAULT_DISPLAY_MIN_HZ
+#define APP_ANALYSIS_DEFAULT_DISPLAY_MIN_HZ         1000UL
+#endif
+
+#ifndef APP_ANALYSIS_DEFAULT_DISPLAY_MAX_HZ
+#define APP_ANALYSIS_DEFAULT_DISPLAY_MAX_HZ         100000UL
+#endif
+
+#ifndef APP_ANALYSIS_DEFAULT_CANDIDATE_STEP_HZ
+#define APP_ANALYSIS_DEFAULT_CANDIDATE_STEP_HZ      1000UL
+#endif
+
+#ifndef APP_ANALYSIS_DEFAULT_MIN_SNR_DB
+#define APP_ANALYSIS_DEFAULT_MIN_SNR_DB             12.0f
+#endif
+
+#ifndef APP_ANALYSIS_DEFAULT_MIN_AMPLITUDE_CODE
+#define APP_ANALYSIS_DEFAULT_MIN_AMPLITUDE_CODE     8.0f
+#endif
+
+#ifndef APP_ANALYSIS_MAX_SELECTED_CANDIDATES
+#define APP_ANALYSIS_MAX_SELECTED_CANDIDATES        5U
+#endif
+
+/* E4 双正弦模型允许的最大归一化 RMS 残差。 */
+#ifndef APP_ANALYSIS_DUAL_SINE_MAX_RESIDUAL
+#define APP_ANALYSIS_DUAL_SINE_MAX_RESIDUAL         0.35f
+#endif
+
+/* E5 实测可调分类参数；理想三角波比例只用于评分，不作为硬门限。 */
+#ifndef APP_ANALYSIS_SINE_THD_SCALE
+#define APP_ANALYSIS_SINE_THD_SCALE                  0.03f
+#endif
+
+#ifndef APP_ANALYSIS_TRIANGLE_MIN_A3_RATIO
+#define APP_ANALYSIS_TRIANGLE_MIN_A3_RATIO           0.025f
+#endif
+
+#ifndef APP_ANALYSIS_TRIANGLE_EVEN_RATIO_SCALE
+#define APP_ANALYSIS_TRIANGLE_EVEN_RATIO_SCALE       0.03f
+#endif
+
+#ifndef APP_ANALYSIS_WAVE_SCORE_MIN_GAP
+#define APP_ANALYSIS_WAVE_SCORE_MIN_GAP              0.05f
+#endif
+
+/* E6 联合模型的归一化残差和置信度参数。 */
+#ifndef APP_ANALYSIS_JOINT_MAX_RESIDUAL
+#define APP_ANALYSIS_JOINT_MAX_RESIDUAL               0.35f
+#endif
+
+#ifndef APP_ANALYSIS_JOINT_GAP_SCALE
+#define APP_ANALYSIS_JOINT_GAP_SCALE                  0.03f
+#endif
+
+#ifndef APP_ANALYSIS_JOINT_MIN_CONFIDENCE
+#define APP_ANALYSIS_JOINT_MIN_CONFIDENCE             0.10f
+#endif
+
+#ifndef APP_ANALYSIS_DEFAULT_CAPTURE_TIMEOUT_MS
+#define APP_ANALYSIS_DEFAULT_CAPTURE_TIMEOUT_MS     1000U
+#endif
+
+/* 0 = Hz，1 = kHz；仅输出数值，不输出 Hz/kHz 字符串。 */
+#ifndef APP_ANALYSIS_DEFAULT_FREQUENCY_UNIT
+#define APP_ANALYSIS_DEFAULT_FREQUENCY_UNIT          1U
+#endif
+
+#ifndef APP_ANALYSIS_OUTPUT_TIMEOUT_MS
+#define APP_ANALYSIS_OUTPUT_TIMEOUT_MS              500U
+#endif
+
+/* FireWater 输出单位为 dBFS x 100，低于 -120 dBFS 的点统一钳位。 */
+#ifndef APP_ANALYSIS_DB_FLOOR_Q100
+#define APP_ANALYSIS_DB_FLOOR_Q100                  (-12000)
+#endif
+
+#endif /* APP_CONFIG_APP_ANALYSIS_CONFIG_H_ */

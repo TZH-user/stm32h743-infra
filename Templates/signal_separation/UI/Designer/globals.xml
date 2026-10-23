@@ -1,0 +1,50 @@
+<globals>
+	<api>
+		<!-- 后续生成代码时，在此处补充 UI 对外枚举与接口。 -->
+	</api>
+
+	<consts>
+		<color name="color_bg" value="0x050607" />
+		<color name="color_surface" value="0x15171a" />
+		<color name="color_surface_alt" value="0x22252a" />
+		<color name="color_border" value="0x474b50" />
+		<color name="color_text" value="0xf4f7fb" />
+		<color name="color_text_muted" value="0x93a4b8" />
+		<color name="color_primary" value="0xffd43b" />
+		<color name="color_success" value="0x57e38c" />
+		<color name="color_warning" value="0xff9f43" />
+		<color name="color_danger" value="0xe15454" />
+	</consts>
+
+	<styles>
+		<style name="style_screen" bg_color="#color_bg" bg_opa="100%" text_color="#color_text" border_width="0" radius="0" pad_all="0" />
+		<style name="style_header" width="800" height="48" bg_color="#color_surface" bg_opa="100%" border_width="0" radius="0" pad_all="0" />
+		<style name="style_card" bg_color="#color_surface" bg_opa="100%" border_color="#color_border" border_width="1" radius="10" pad_all="12" />
+		<style name="style_nav" width="800" height="56" bg_color="#color_surface" bg_opa="100%" border_color="#color_border" border_side="top" border_width="1" radius="0" pad_all="0" />
+		<style name="style_nav_button" bg_color="#color_surface_alt" bg_opa="100%" border_width="0" radius="8" text_color="#color_text_muted" />
+		<style name="style_nav_button_active" bg_color="#color_primary" text_color="#color_text" />
+		<style name="style_primary_button" bg_color="#color_primary" bg_opa="100%" border_width="0" radius="8" text_color="#color_text" />
+		<style name="style_secondary_button" bg_color="#color_surface_alt" bg_opa="100%" border_color="#color_border" border_width="1" radius="8" text_color="#color_text" />
+		<style name="style_danger_button" bg_color="#color_danger" bg_opa="100%" border_width="0" radius="8" text_color="#color_text" />
+		<style name="style_text_muted" text_color="#color_text_muted" />
+	</styles>
+
+	<subjects>
+		<string name="analysis_state" value="READY" help="当前分析状态" />
+		<string name="peak_frequency" value="50.02" help="主峰频率数值" />
+		<string name="peak_level" value="-12.35" help="主峰幅度数值" />
+		<string name="sample_rate" value="200 kS/s" help="实际采样率" />
+		<string name="fft_size" value="4096" help="FFT 点数" />
+		<string name="frequency_band" value="0 - 100 kHz" help="显示频段" />
+		<int name="successful_runs" value="12" min_value="0" help="成功次数" />
+		<int name="failed_runs" value="0" min_value="0" help="失败次数" />
+	</subjects>
+
+	<images>
+		<!-- 第一版不引入图片资源，降低 Flash 和解码依赖。 -->
+	</images>
+
+	<fonts>
+		<!-- 第一版使用 LVGL 默认 Montserrat 14；中文字体在独立阶段接入。 -->
+	</fonts>
+</globals>

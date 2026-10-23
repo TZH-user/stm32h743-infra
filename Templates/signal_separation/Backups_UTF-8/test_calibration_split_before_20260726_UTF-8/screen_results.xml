@@ -1,0 +1,34 @@
+<screen>
+	<view>
+		<style name="style_screen" />
+
+		<lv_obj x="0" y="0"><style name="style_header" /><lv_label text="Results / Last Analysis" x="16" y="16" /></lv_obj>
+
+		<app_metric_card x="16" y="64" title="Peak Frequency" value="50.02" unit="kHz" accent="0x22a7f0" />
+		<app_metric_card x="280" y="64" title="Peak Level" value="-12.35" unit="dBFS" accent="0x32c48d" />
+		<app_metric_card x="544" y="64" title="Resolution" value="48.83" unit="Hz/bin" accent="0xf4b740" />
+
+		<lv_obj x="16" y="168" width="768" height="240">
+			<style name="style_card" />
+			<lv_label text="Detected Peaks" x="4" y="2" />
+			<lv_label text="1." x="12" y="48" style_text_color="#color_primary" />
+			<lv_label text="50.02 kHz" x="92" y="48" />
+			<lv_label text="-12.35 dBFS" x="280" y="48" />
+			<lv_label text="2." x="12" y="92" style_text_color="#color_primary" />
+			<lv_label text="72.90 kHz" x="92" y="92" />
+			<lv_label text="-31.20 dBFS" x="280" y="92" />
+			<lv_label text="3." x="12" y="136" style_text_color="#color_primary" />
+			<lv_label text="18.75 kHz" x="92" y="136" />
+			<lv_label text="-42.80 dBFS" x="280" y="136" />
+			<lv_label text="Mock data for layout approval" x="500" y="180" style_text_color="#color_text_muted" />
+		</lv_obj>
+
+		<lv_obj x="0" y="424">
+			<style name="style_nav" />
+			<lv_button x="16" y="8" width="180" height="40"><style name="style_nav_button" /><lv_label text="Monitor" align="center" /><screen_load_event screen="screen_monitor" /></lv_button>
+			<lv_button x="212" y="8" width="180" height="40"><style name="style_nav_button" /><lv_label text="Calibration" align="center" /><screen_create_event screen="screen_calibration" /></lv_button>
+			<lv_button x="408" y="8" width="180" height="40"><style name="style_nav_button" /><style name="style_nav_button_active" /><lv_label text="Results" align="center" /></lv_button>
+			<lv_button x="604" y="8" width="180" height="40"><style name="style_nav_button" /><lv_label text="System" align="center" /><screen_create_event screen="screen_system" /></lv_button>
+		</lv_obj>
+	</view>
+</screen>

@@ -1,0 +1,15 @@
+{
+  "name": "dual_snr_10",
+  "kind": "dual",
+  "analysis_mode": "dual",
+  "sample_rate_hz": 204800,
+  "frames": 8,
+  "dc_code": 2048,
+  "snr_db": 10,
+  "seed": 20260727,
+  "tones": [
+    {"frequency_hz": 1000, "amplitude_code": 900, "phase_rad": 0.0},
+    {"frequency_hz": 10000, "amplitude_code": 300, "phase_rad": 0.7}
+  ]
+}
+

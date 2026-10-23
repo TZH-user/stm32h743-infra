@@ -1,0 +1,17 @@
+{
+  "csv": "F:\\STM32\\mso4104b_ch2_current_20260803.csv",
+  "metrics": {
+    "points": 2500,
+    "time_start_s": -0.000747,
+    "time_end_s": -0.00072201,
+    "duration_s": 2.4990000000000017e-05,
+    "sample_interval_s": 1.0000000000000007e-08,
+    "voltage_min_v": -4.1,
+    "voltage_max_v": 0.0,
+    "voltage_mean_v": -2.37748,
+    "voltage_vpp_v": 4.1,
+    "voltage_rms_v": 2.7801628441513997,
+    "frequency_hz_estimate": null,
+    "period_s_estimate": null
+  }
+}

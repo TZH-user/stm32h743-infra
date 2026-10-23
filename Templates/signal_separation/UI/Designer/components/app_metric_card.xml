@@ -1,0 +1,20 @@
+<component>
+	<api>
+		<prop name="title" type="string" default="Metric" />
+		<prop name="value" type="string" default="--" />
+		<prop name="unit" type="string" default="" />
+		<prop name="accent" type="color" default="0x22a7f0" />
+	</api>
+
+	<styles>
+		<style name="style_metric_card" width="240" height="88" bg_color="#color_surface" bg_opa="100%" border_color="$accent" border_width="2" radius="10" pad_all="0" />
+	</styles>
+
+	<view extends="lv_obj">
+		<remove_style_all />
+		<style name="style_metric_card" />
+		<lv_label text="$title" x="14" y="12" style_text_color="#color_text_muted" />
+		<lv_label text="$value" x="14" y="42" style_text_color="#color_text" />
+		<lv_label text="$unit" align="bottom_right" x="-14" y="-14" style_text_color="#color_text_muted" />
+	</view>
+</component>

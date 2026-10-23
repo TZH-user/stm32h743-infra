@@ -1,0 +1,97 @@
+<screen permanent="true">
+	<styles>
+		<style name="scope_panel" bg_color="0x16191d" bg_opa="100%" border_color="0x3b4148" border_width="1" radius="2" pad_all="0" />
+		<style name="scope_plot" bg_color="0x030405" bg_opa="100%" border_color="0x59616a" border_width="1" radius="0" pad_all="4" line_color="0x354047" />
+		<style name="scope_key" bg_color="0x272c32" bg_opa="100%" border_color="0x626b75" border_width="1" radius="3" text_color="0xf2f3f4" />
+		<style name="scope_run" bg_color="0x2abf70" bg_opa="100%" border_width="0" radius="3" text_color="0x04130b" />
+		<style name="scope_stop" bg_color="0xd84b4b" bg_opa="100%" border_width="0" radius="3" text_color="0xffffff" />
+		<style name="scope_home" bg_color="0x176b87" bg_opa="100%" border_color="0x80d6ff" border_width="1" radius="3" text_color="0xffffff" />
+		<style name="scope_trace_line" line_width="2" />
+		<style name="scope_trace_point" width="2" height="2" radius="1" border_width="0" bg_opa="100%" />
+	</styles>
+
+	<view>
+		<style name="style_screen" />
+		<lv_obj x="0" y="0" width="800" height="40">
+			<style name="scope_panel" />
+			<lv_label text="Signal Separator" x="12" y="12" />
+			<lv_label text="AD9226 / Dual DAC" x="268" y="12" style_text_color="0x80d6ff" />
+			<lv_label bind_text="analysis_state" x="650" y="12" width="138" style_text_align="right" style_text_color="0x72eaa5" />
+		</lv_obj>
+
+		<lv_label name="ui_title" text="Mixed input waveform" x="12" y="46" style_text_color="0xffdf3f" />
+		<lv_chart name="ui_chart" x="8" y="68" width="624" height="200" type="line" point_count="32" hor_div_line_count="8" ver_div_line_count="10">
+			<style name="scope_plot" />
+			<style name="scope_trace_line" selector="items" />
+			<style name="scope_trace_point" selector="indicator" />
+			<lv_chart-axis axis="primary_y" min_value="0" max_value="100" />
+			<lv_chart-series color="0xffdf3f" axis="primary_y" values="50 66 77 79 71 56 39 25 20 27 42 59 73 80 76 63 46 31 21 22 33 49 65 77 79 70 54 37 24 20 29 44" />
+		</lv_chart>
+
+		<lv_obj x="8" y="276" width="624" height="196">
+			<style name="scope_panel" />
+			<lv_obj x="8" y="8" width="296" height="92">
+				<style name="scope_panel" />
+				<lv_label text="Signal A / LF" x="10" y="6" style_text_color="0xffdf3f" />
+				<lv_label text="Type" x="10" y="32" style_text_color="0x9aa4ad" />
+				<lv_label name="ui_signal_a_type" text="--" x="58" y="32" />
+				<lv_label name="ui_signal_a_votes" text="F 0/8  T 0/8" x="174" y="32" style_text_color="0x72eaa5" />
+				<lv_label text="Freq" x="10" y="62" style_text_color="0x9aa4ad" />
+				<lv_label name="ui_signal_a_frequency" text="-- kHz" x="58" y="62" />
+				<lv_label text="Ampl" x="174" y="62" style_text_color="0x9aa4ad" />
+				<lv_label name="ui_signal_a_amplitude" text="--" x="214" y="62" />
+			</lv_obj>
+			<lv_obj x="312" y="8" width="304" height="92">
+				<style name="scope_panel" />
+				<lv_label text="Signal B / HF" x="10" y="6" style_text_color="0x80d6ff" />
+				<lv_label text="Type" x="10" y="32" style_text_color="0x9aa4ad" />
+				<lv_label name="ui_signal_b_type" text="--" x="58" y="32" />
+				<lv_label name="ui_signal_b_votes" text="F 0/8  T 0/8" x="180" y="32" style_text_color="0x72eaa5" />
+				<lv_label text="Freq" x="10" y="62" style_text_color="0x9aa4ad" />
+				<lv_label name="ui_signal_b_frequency" text="-- kHz" x="58" y="62" />
+				<lv_label text="Ampl" x="180" y="62" style_text_color="0x9aa4ad" />
+				<lv_label name="ui_signal_b_amplitude" text="--" x="220" y="62" />
+			</lv_obj>
+			<lv_label text="Frames" x="10" y="112" style_text_color="0x9aa4ad" />
+			<lv_label name="ui_valid_frames" text="0/8" x="60" y="112" />
+			<lv_label text="Conf" x="128" y="112" style_text_color="0x9aa4ad" />
+			<lv_label name="ui_confidence" text="0.000" x="178" y="112" />
+			<lv_label text="Resid" x="270" y="112" style_text_color="0x9aa4ad" />
+			<lv_label name="ui_residual" text="0.00000" x="306" y="112" />
+			<lv_label text="Time" x="424" y="112" style_text_color="0x9aa4ad" />
+			<lv_label name="ui_session_time" text="0 ms" x="470" y="112" />
+			<lv_label name="ui_model_diagnostic" text="Cand 0 / Pair 0 / Model 0" x="10" y="140" style_text_color="0x80d6ff" />
+			<lv_label name="ui_error_detail" text="Ready" x="10" y="166" style_text_color="0x72eaa5" />
+			<lv_label text="Peak" x="424" y="140" style_text_color="0x9aa4ad" />
+			<lv_label name="ui_peak_frequency" text="--" x="470" y="140" />
+			<lv_label text="kHz" x="522" y="140" style_text_color="0x9aa4ad" />
+			<lv_label text="SNR" x="424" y="166" style_text_color="0x9aa4ad" />
+			<lv_label name="ui_peak_level" text="--" x="470" y="166" />
+			<lv_label name="ui_peak_level_unit" text="dB" x="522" y="166" style_text_color="0x9aa4ad" />
+		</lv_obj>
+
+		<lv_obj x="640" y="48" width="152" height="424">
+			<style name="scope_panel" />
+			<lv_label text="Control" x="14" y="12" style_text_color="0x80d6ff" />
+			<lv_dropdown name="ui_mode_dropdown" x="8" y="36" width="136" height="38" options="Spectrum preview&#10;Waveform" selected="1"><style name="scope_key" /></lv_dropdown>
+			<lv_button x="8" y="84" width="136" height="42">
+				<style name="scope_key" />
+				<lv_label text="Full view" align="center" />
+				<screen_create_event screen="screen_spectrum" />
+			</lv_button>
+			<lv_label text="B'-A' Phase" x="12" y="136" style_text_color="0x9aa4ad" />
+			<lv_button name="ui_phase_decrease" x="8" y="158" width="38" height="36"><style name="scope_key" /><lv_label text="-" align="center" /></lv_button>
+			<lv_label name="ui_phase_value" text="0°" x="50" y="168" width="52" style_text_align="center" />
+			<lv_button name="ui_phase_increase" x="106" y="158" width="38" height="36"><style name="scope_key" /><lv_label text="+" align="center" /></lv_button>
+			<lv_button x="8" y="210" width="136" height="50">
+				<style name="scope_home" />
+				<lv_label text="Home" align="center" />
+				<screen_create_event screen="screen_control" />
+			</lv_button>
+			<lv_label text="Cal data: legacy" x="12" y="274" style_text_color="0x9aa4ad" />
+			<lv_label text="Path: OK" x="12" y="296" style_text_color="0x72eaa5" />
+			<lv_button name="ui_start_button" x="8" y="324" width="136" height="42"><style name="scope_run" /><lv_label text="Run" align="center" /></lv_button>
+			<lv_button name="ui_stop_button" x="8" y="372" width="136" height="42"><style name="scope_stop" /><lv_label text="Stop" align="center" /></lv_button>
+		</lv_obj>
+	</view>
+</screen>

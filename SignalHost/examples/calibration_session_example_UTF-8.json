@@ -1,0 +1,22 @@
+{
+  "schema": "signalhost-calibration-session-v1",
+  "source": "serial-fake",
+  "firmware_id": "SERIAL_FAKE_V1",
+  "units": {
+    "reference_mv": "mV",
+    "measured_code": "ADC code",
+    "gain": "code/V",
+    "offset": "code"
+  },
+  "fit": {
+    "model": "code = gain * voltage + offset",
+    "gain_code_per_volt": 800.0,
+    "offset_code": 100.0,
+    "r_squared": 1.0,
+    "maximum_absolute_residual_code": 0.0,
+    "point_count": 3,
+    "result": "PASS"
+  },
+  "profile_sequence": "NOT_PROVIDED_BY_SERIAL_PROTOCOL",
+  "hardware_validation": "HARDWARE_PENDING"
+}

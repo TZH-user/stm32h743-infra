@@ -1,0 +1,50 @@
+[INFO] 编码：UTF-8
+[INFO] 日期：2026-07-26
+
+[BUILD]
+command=stm32-build-ai build F:\STM32\stm32project\VSCodeCMAKEProject\signal_separation --preset Debug --json
+result=PASS
+FLASH=899772 B / 2 MiB
+DTCMRAM=103512 B / 128 KiB
+RAM_D2=152064 B / 288 KiB
+artifact=F:\STM32\stm32project\VSCodeCMAKEProject\signal_separation\build\Debug\signal_separation.hex
+sha256=FB6955D8221C931BC9B450236508D52DE81CC8D89EC9BA59D42B448A897FA8D2
+
+[FLASH]
+probe=STLINK-V3MODS
+sn=002E00443234511337333934
+fw=V3J17M10B6S1
+target=STM32H7xx Rev V / Device ID 0x450
+mode=UR
+freq=1000 kHz
+voltage=3.22V
+verify=PASS
+run=PASS
+mass_erase=NO
+option_bytes=UNCHANGED
+external_qspi_erase=NO
+
+[HOST_TEST]
+calibration_self_test_host_test=PASS
+
+[USER_HARDWARE_OBSERVATION]
+dc_half=PLATEAU
+dc_full=PLATEAU
+ac_20kHz_0.8Vpp=LIMITS
+
+[INTERPRETATION]
+PLATEAU/LIMITS 是当前保护性诊断结果，不等同于固件失败。
+现有回环证据显示 DC 在约 1.10..1.25 V 标称输出后进入约 1618 ADC code 平台，且远离 ADC 0/4095 贴边；仅凭片内 DAC 输出电压不高不能解释该平台。
+需要后续分别测量 PA4、继电器后节点和 AD9226 驱动节点，区分 DAC 受载、继电器触点路径、前端钳位或软件标称值与实际波形不一致。
+
+[RETEST_FIX]
+APP/Calibration/app_calibration_service.c：仅允许 OUTPUT_SELF_TEST 项目在 REVIEW 状态重新 RequestStart；普通校准项目仍必须处于 READY，避免覆盖待确认校准数据。
+UI/Adapter/app_calibration_ui_adapter.c：OUTPUT_SELF_TEST 在 REVIEW 状态下 START 不再置灰，选择控件继续锁定。
+
+[SAFETY]
+自检收尾保持 relay=0x0、dac_code=0、adc_run=0；未放宽 3.00 V 名义上限、50 mV 步进、25 ms 驻留、平台与削顶保护。
+
+[FINAL_SWDDIRECT]
+GPIOC_ODR=0
+DAC1_DOR1=0
+结论=继电器双低、DAC 数据寄存器为 0；当前未发现输出残留。

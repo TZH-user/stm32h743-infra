@@ -1,0 +1,2 @@
+﻿index,expected_frequency_hz,measured_frequency_hz,frequency_error_ppm,input_vpp,output_vpp,gain_db,thd_percent,snr_db,capture_source,passed
+1,1000.0,1000.0601669357616,60.16693576157195,1.0,0.98,-0.175478486150103,0.10805060999192026,74.15082867578599,board_vcp,True

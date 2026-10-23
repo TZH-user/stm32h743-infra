@@ -1,0 +1,44 @@
+<screen>
+	<view>
+		<style name="style_screen" />
+
+		<lv_obj x="0" y="0">
+			<style name="style_header" />
+			<lv_label text="Control / Acq & Analysis" x="16" y="16" />
+			<lv_label text="Changes take effect after Apply" x="500" y="16" style_text_color="#color_text_muted" />
+		</lv_obj>
+
+		<lv_obj x="16" y="64" width="370" height="142">
+			<style name="style_card" />
+			<lv_label text="Sample rate" x="4" y="2" />
+			<lv_label bind_text="sample_rate" x="4" y="42" />
+			<lv_button x="220" y="36" width="120" height="42"><style name="style_secondary_button" /><lv_label text="Select" align="center" /></lv_button>
+		</lv_obj>
+		<lv_obj x="414" y="64" width="370" height="142">
+			<style name="style_card" />
+			<lv_label text="FFT size" x="4" y="2" />
+			<lv_label bind_text="fft_size" x="4" y="42" />
+			<lv_button x="220" y="36" width="120" height="42"><style name="style_secondary_button" /><lv_label text="Select" align="center" /></lv_button>
+		</lv_obj>
+		<lv_obj x="16" y="214" width="370" height="142">
+			<style name="style_card" />
+			<lv_label text="Band" x="4" y="2" />
+			<lv_label bind_text="frequency_band" x="4" y="42" />
+			<lv_button x="220" y="36" width="120" height="42"><style name="style_secondary_button" /><lv_label text="Edit" align="center" /></lv_button>
+		</lv_obj>
+		<lv_obj x="414" y="214" width="370" height="142">
+			<style name="style_card" />
+			<lv_label text="Capture & Apply" x="4" y="2" />
+			<lv_label text="Timeout: 1000 ms" x="4" y="42" style_text_color="#color_text_muted" />
+			<lv_button x="180" y="34" width="160" height="48"><style name="style_primary_button" /><lv_label text="Apply" align="center" /></lv_button>
+		</lv_obj>
+
+		<lv_obj x="0" y="424">
+			<style name="style_nav" />
+			<lv_button x="16" y="8" width="180" height="40"><style name="style_nav_button" /><lv_label text="Monitor" align="center" /><screen_load_event screen="screen_monitor" /></lv_button>
+			<lv_button x="212" y="8" width="180" height="40"><style name="style_nav_button" /><lv_label text="Test" align="center" /><screen_create_event screen="screen_test" /></lv_button>
+			<lv_button x="408" y="8" width="180" height="40"><style name="style_nav_button" /><lv_label text="Calib" align="center" /><screen_create_event screen="screen_calibration" /></lv_button>
+			<lv_button x="604" y="8" width="180" height="40"><style name="style_nav_button" /><lv_label text="System" align="center" /><screen_create_event screen="screen_system" /></lv_button>
+		</lv_obj>
+	</view>
+</screen>

@@ -1,0 +1,13 @@
+{
+  "name": "sine_10k_snr20",
+  "kind": "sine",
+  "analysis_mode": "peak",
+  "sample_rate_hz": 204800,
+  "frames": 8,
+  "dc_code": 2048,
+  "frequency_hz": 10000,
+  "amplitude_code": 800,
+  "snr_db": 20,
+  "seed": 20260727
+}
+

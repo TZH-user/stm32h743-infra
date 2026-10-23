@@ -1,0 +1,24 @@
+#ifndef APP_ANALYSIS_CONFIG_H_
+#define APP_ANALYSIS_CONFIG_H_
+
+/*
+ * SignalCore 当前把分析阈值留在板级 APP/Config 中。
+ * Host 侧在本目录提供独立配置，避免读取或修改任一固件工程。
+ */
+#define APP_ANALYSIS_DEFAULT_DISPLAY_MIN_HZ          500U
+#define APP_ANALYSIS_DEFAULT_DISPLAY_MAX_HZ          50000U
+#define APP_ANALYSIS_DEFAULT_CANDIDATE_STEP_HZ       500U
+#define APP_ANALYSIS_DEFAULT_MIN_SNR_DB              6.0f
+#define APP_ANALYSIS_DEFAULT_MIN_AMPLITUDE_CODE      4.0f
+#define APP_ANALYSIS_MAX_SELECTED_CANDIDATES         6U
+
+#define APP_ANALYSIS_DUAL_SINE_MAX_RESIDUAL          0.45f
+#define APP_ANALYSIS_TRIANGLE_EVEN_RATIO_SCALE       0.08f
+#define APP_ANALYSIS_SINE_THD_SCALE                  0.05f
+#define APP_ANALYSIS_TRIANGLE_MIN_A3_RATIO           0.06f
+#define APP_ANALYSIS_WAVE_SCORE_MIN_GAP              0.05f
+#define APP_ANALYSIS_JOINT_MAX_RESIDUAL              0.50f
+#define APP_ANALYSIS_JOINT_GAP_SCALE                 0.02f
+#define APP_ANALYSIS_JOINT_MIN_CONFIDENCE            0.01f
+
+#endif /* APP_ANALYSIS_CONFIG_H_ */

@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "name": "bode_100_1M",
+  "dut": "DG4062 CH1 -> DUT -> DS4014E CH1（真实链路待上电验证）",
+  "source": {
+    "instrument": "dg4062",
+    "channel": 1,
+    "waveform": "sine",
+    "amplitude_vpp": 1.0,
+    "offset_v": 0.0,
+    "sweep": {
+      "start_hz": 100.0,
+      "stop_hz": 1000000.0,
+      "points": 20,
+      "spacing": "log"
+    }
+  },
+  "capture": {
+    "source": "scope",
+    "channel": 1,
+    "settle_ms": 200,
+    "samples": 8192
+  },
+  "simulation": {
+    "gain_db": 0.0,
+    "cutoff_hz": 10000000.0,
+    "noise_snr_db": 72.0,
+    "frequency_error_ppm": 10.0,
+    "harmonics_dbc": {"2": -62.0, "3": -72.0},
+    "seed": 20260727
+  },
+  "metrics": ["vpp_ratio_db", "frequency_accuracy"],
+  "pass": {
+    "flatness_db_max": 1.0,
+    "frequency_error_ppm_max": 200.0
+  },
+  "safety": {
+    "amplitude_vpp_max": 5.0
+  }
+}
+

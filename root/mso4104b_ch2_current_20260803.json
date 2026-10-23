@@ -1,0 +1,18 @@
+{
+  "idn": "TEKTRONIX,MSO4104B,C010626,CF:91.1CT FV:v2.90 DPO4EMBD:V1.00 DPO4AUTO:V1.00 DPO4AUTOMAX:V1.00 DPO4COMP:V1.00 DPO4VID:V1.00 DPO4LMT:V1.00 DPO4PWR:V1.00 DPO4AUDIO:V1.00 DPO4USB:V1.00 DPO4ENET:V1.00 DPO4AERO:V1.00",
+  "host": "192.168.2.138",
+  "port": 4000,
+  "source": "CH2",
+  "start": 1,
+  "stop": 2500,
+  "points": 2500,
+  "ymult": 0.02,
+  "yzero": -2.0,
+  "yoff": 0.0,
+  "xincr": 1e-08,
+  "xzero": -0.000747,
+  "pt_off": 0,
+  "wfmoutpre": "1;8;ASCII;RI;MSB;\"Ch2, DC coupling, 500.0mV/div, 100.0us/div, 100000 points, Sample mode\";2500;Y;LINEAR;\"s\";10.0000E-9;-747.0000E-6;0;\"V\";20.0000E-3;-2.0000;0.0E+0;TIME;ANALOG;0.0E+0;0.0E+0;0.0E+0",
+  "conversion_source": "WFMOutpre?",
+  "restored_data_setup": true
+}

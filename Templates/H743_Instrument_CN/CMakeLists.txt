@@ -1,0 +1,208 @@
+cmake_minimum_required(VERSION 3.22)
+
+#
+# This file is generated only once,
+# and is not re-generated if converter is called multiple times.
+#
+# User is free to modify the file as much as necessary
+#
+
+# Setup compiler settings
+set(CMAKE_C_STANDARD 11)
+set(CMAKE_C_STANDARD_REQUIRED ON)
+set(CMAKE_C_EXTENSIONS ON)
+
+
+# Define the build type
+if(NOT CMAKE_BUILD_TYPE)
+    set(CMAKE_BUILD_TYPE "Debug")
+endif()
+
+# Set the project name
+set(CMAKE_PROJECT_NAME H743_Instrument_CN)
+
+# Enable compile command to ease indexing with e.g. clangd
+set(CMAKE_EXPORT_COMPILE_COMMANDS TRUE)
+
+# Core project settings
+project(${CMAKE_PROJECT_NAME})
+message("Build type: " ${CMAKE_BUILD_TYPE})
+
+# Enable CMake support for ASM and C languages
+enable_language(C ASM)
+
+# Create an executable object type
+add_executable(${CMAKE_PROJECT_NAME})
+
+# Add STM32CubeMX generated sources
+add_subdirectory(cmake/stm32cubemx)
+
+
+
+# CMSIS-DSP subset used by the real-FFT analysis task.
+set(CMSIS_DSP_DIR ${CMAKE_SOURCE_DIR}/Drivers/CMSIS/DSP)
+
+add_library(cmsis_dsp_fft STATIC
+    ${CMSIS_DSP_DIR}/Source/CommonTables/arm_common_tables.c
+    ${CMSIS_DSP_DIR}/Source/CommonTables/arm_const_structs.c
+    ${CMSIS_DSP_DIR}/Source/ControllerFunctions/arm_sin_cos_f32.c
+    ${CMSIS_DSP_DIR}/Source/TransformFunctions/arm_bitreversal2.c
+    ${CMSIS_DSP_DIR}/Source/TransformFunctions/arm_cfft_f32.c
+    ${CMSIS_DSP_DIR}/Source/TransformFunctions/arm_cfft_init_f32.c
+    ${CMSIS_DSP_DIR}/Source/TransformFunctions/arm_cfft_radix8_f32.c
+    ${CMSIS_DSP_DIR}/Source/TransformFunctions/arm_rfft_fast_f32.c
+    ${CMSIS_DSP_DIR}/Source/TransformFunctions/arm_rfft_fast_init_f32.c
+    ${CMSIS_DSP_DIR}/Source/ComplexMathFunctions/arm_cmplx_mag_f32.c
+)
+
+target_include_directories(cmsis_dsp_fft PUBLIC
+    ${CMSIS_DSP_DIR}/Include
+    ${CMAKE_SOURCE_DIR}/Drivers/CMSIS/Include
+)
+
+target_compile_definitions(cmsis_dsp_fft PUBLIC
+    ARM_MATH_CM7
+)
+
+target_compile_options(cmsis_dsp_fft PRIVATE
+    -O3
+)
+
+# Reusable pure algorithms and STM32 hardware/RTOS adapters.
+add_subdirectory(SignalCore)
+add_subdirectory(CalibrationCore)
+add_subdirectory(Stm32SignalAdapters)
+
+# LVGL root
+set(LVGL_DIR ${CMAKE_SOURCE_DIR}/Middlewares/Third_Party/lvgl_9.5.0)
+
+# Collect LVGL core sources
+file(GLOB_RECURSE LVGL_SOURCES CONFIGURE_DEPENDS
+    "${LVGL_DIR}/src/*.c"
+)
+
+# Create LVGL static library
+add_library(lvgl STATIC ${LVGL_SOURCES})
+
+target_include_directories(lvgl PUBLIC
+    "${LVGL_DIR}"
+    "${CMAKE_SOURCE_DIR}/APP/Config"
+    "${CMAKE_SOURCE_DIR}/Core/Inc"
+    "${CMAKE_SOURCE_DIR}/Drivers/CMSIS/Include"
+    "${CMAKE_SOURCE_DIR}/Drivers/CMSIS/RTOS2/Include"
+    # LV_USE_DRAW_DMA2D 经 LV_DRAW_DMA2D_HAL_INCLUDE 引 stm32h7xx_hal.h
+    "${CMAKE_SOURCE_DIR}/Drivers/STM32H7xx_HAL_Driver/Inc"
+    "${CMAKE_SOURCE_DIR}/Drivers/CMSIS/Device/ST/STM32H7xx/Include"
+)
+
+
+target_compile_definitions(lvgl PUBLIC
+    LV_CONF_INCLUDE_SIMPLE
+    LV_LVGL_H_INCLUDE_SIMPLE
+    LV_KCONFIG_IGNORE
+    STM32H743xx
+    USE_HAL_DRIVER
+)
+
+# LVGL Pro 生成项目自带文件清单；重新生成 UI 后无需手工同步源文件列表。
+add_subdirectory(UI/Designer)
+
+
+
+# Link directories setup
+target_link_directories(${CMAKE_PROJECT_NAME} PRIVATE
+    # Add user defined library search paths
+)
+
+# Add sources to executable
+target_sources(${CMAKE_PROJECT_NAME} PRIVATE
+    APP/RTOS/app_display_task.c
+    APP/RTOS/app_calibration_worker_task.c
+    APP/RTOS/app_output_task.c
+    APP/RTOS/app_output_log_formatter.c
+    APP/RTOS/app_output_wave_stream.c
+    APP/RTOS/app_main_task.c
+    APP/RTOS/app_serial_control_task.c
+    APP/BoardFlash/app_board_flash.c
+    APP/BoardFlash/board_flash_qspi_port.c
+    APP/BoardFlash/board_flash_w25q64.c
+    APP/Calibration/app_calibration_board_port.c
+    APP/Calibration/app_calibration_service.c
+    APP/Calibration/app_calibration_storage_port.c
+    APP/SerialControl/app_uart_callback_router.c
+    APP/SerialControl/app_ui_remote_control.c
+    APP/SignalDetect/signal_detect.c
+    BSP/LTDC/app_display.c
+    BSP/SDRAM/app_sdram_test.c
+    BSP/Touch/app_touch_gt9xx.c
+    UI/app_lvgl.c
+    UI/Port/app_lvgl_port_disp.c
+    UI/Port/app_lvgl_port_indev.c
+    UI/pages/app_lvgl_ui.c
+    UI/Adapter/app_calibration_ui_adapter.c
+    UI/Adapter/app_ui_adapter.c
+    UI/Adapter/app_signal_result_view.c
+    UI/Custom/app_instrument_screen.c
+    UI/Fonts/font_cn_16.c
+
+    APP/Debug/app_rtos_diagnostics.c
+    APP/Debug/app_ui_monitor.c
+
+)
+
+# Add include paths
+target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
+    ${CMAKE_SOURCE_DIR}
+    SignalCore/include
+    CalibrationCore/include
+    Stm32SignalAdapters/include
+    APP/BoardFlash
+    APP/Calibration
+    APP/Config
+    APP/DacOutput
+    APP/Math
+    APP/PhaseLock
+    APP/RTOS
+    APP/SerialControl
+    APP/SignalDetect
+    BSP/ADC
+    BSP/LTDC
+    BSP/SDRAM
+    BSP/Touch
+    UI
+    UI/Port
+    UI/pages
+    UI/Adapter
+    UI/Custom
+    UI/Fonts
+    Core/Inc
+
+    APP/Debug
+)
+
+# Remove wrong libob.a library dependency when using cpp files
+list(REMOVE_ITEM CMAKE_C_IMPLICIT_LINK_LIBRARIES ob)
+
+# Add linked libraries
+target_link_libraries(${CMAKE_PROJECT_NAME}
+    stm32cubemx
+    lvgl
+    lib-ui
+    cmsis_dsp_fft
+    signal_core
+    calibration_core
+    stm32_signal_adapters
+    m
+    # Add user defined libraries
+)
+
+# 每次重新链接后同步生成烧录文件，避免 HEX/BIN 落后于 ELF。
+add_custom_command(TARGET ${CMAKE_PROJECT_NAME} POST_BUILD
+    COMMAND ${CMAKE_OBJCOPY} -O ihex
+            $<TARGET_FILE:${CMAKE_PROJECT_NAME}>
+            ${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_PROJECT_NAME}.hex
+    COMMAND ${CMAKE_OBJCOPY} -O binary
+            $<TARGET_FILE:${CMAKE_PROJECT_NAME}>
+            ${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_PROJECT_NAME}.bin
+    COMMENT "Generating synchronized HEX and BIN images"
+)

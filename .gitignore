@@ -1,0 +1,55 @@
+# ===== Build outputs =====
+build/
+build-*/
+cmake-build-*/
+Debug/
+Release/
+out/
+dist/
+
+# ===== Keil / IAR artifacts =====
+*.uvguix.*
+*.bak
+*.dep
+*.iex
+*.lst
+*.lnp
+*.crf
+*.o
+*.d
+*.axf
+*.htm
+*.tra
+*.map
+*.elf
+*.hex
+*.bin
+
+# ===== Tool caches =====
+.codegraph/
+.matplotlib_cache/
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+
+# ===== IDE =====
+.vscode/
+.idea/
+*.swp
+*.code-workspace
+
+# ===== OS =====
+.DS_Store
+Thumbs.db
+desktop.ini
+*.lnk
+
+# ===== Archives (regenerable) =====
+*.zip
+*.7z
+*.rar
+
+# ===== Secrets =====
+.env
+.env.*

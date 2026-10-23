@@ -1,0 +1,223 @@
+<screen>
+	<styles>
+		<style
+			name="cal_panel"
+			bg_color="0x16191d"
+			bg_opa="100%"
+			border_color="0x3b4148"
+			border_width="1"
+			radius="3"
+			pad_all="0"
+		/>
+		<style
+			name="cal_field"
+			bg_color="0x272c32"
+			bg_opa="100%"
+			border_color="0x626b75"
+			border_width="1"
+			radius="3"
+			text_color="0xf2f3f4"
+		/>
+		<style
+			name="cal_primary"
+			bg_color="0x176b87"
+			bg_opa="100%"
+			border_color="0x80d6ff"
+			border_width="1"
+			radius="3"
+			text_color="0xffffff"
+		/>
+		<style name="cal_safe" bg_color="0x2abf70" bg_opa="100%" border_width="0" radius="3" text_color="0x04130b" />
+		<style name="cal_stop" bg_color="0xd84b4b" bg_opa="100%" border_width="0" radius="3" text_color="0xffffff" />
+		<style
+			name="cal_pending"
+			bg_color="0x7a5b16"
+			bg_opa="100%"
+			border_color="0xffd43b"
+			border_width="1"
+			radius="3"
+			text_color="0xffffff"
+		/>
+		<style
+			name="cal_plot"
+			bg_color="0x030405"
+			bg_opa="100%"
+			border_color="0x59616a"
+			border_width="1"
+			radius="0"
+			pad_all="4"
+			line_color="0x354047"
+		/>
+		<style name="cal_trace" line_width="2" />
+	</styles>
+
+	<view>
+		<style name="style_screen" />
+		<lv_obj x="0" y="0" width="800" height="50">
+			<style name="cal_panel" />
+			<lv_button x="8" y="7" width="88" height="36">
+				<style name="cal_field" />
+				<lv_label text="BACK" align="center" />
+				<screen_load_event screen="screen_monitor" />
+			</lv_button>
+			<lv_label text="AD / DA CALIBRATION" x="112" y="16" style_text_color="0x80d6ff" />
+			<lv_button name="cal_internal_button" x="328" y="7" width="116" height="36">
+				<style name="cal_primary" />
+				<lv_label text="INTERNAL" align="center" />
+			</lv_button>
+			<lv_button name="cal_external_button" x="452" y="7" width="116" height="36">
+				<style name="cal_field" />
+				<lv_label text="EXTERNAL" align="center" />
+			</lv_button>
+			<lv_label name="cal_exclusive_label" text="EXCLUSIVE" x="610" y="16" style_text_color="0xffd43b" />
+			<lv_label name="cal_safe_label" text="SAFE" x="742" y="16" style_text_color="0x72eaa5" />
+		</lv_obj>
+
+		<lv_obj x="8" y="58" width="240" height="414">
+			<style name="cal_panel" />
+			<lv_label text="SOURCE &amp; LIMITS" x="12" y="12" style_text_color="0x80d6ff" />
+			<lv_label text="ADDA SOURCE" x="12" y="42" style_text_color="0x9aa4ad" />
+			<lv_dropdown name="cal_source_dropdown"
+				x="12"
+				y="62"
+				width="216"
+				height="38"
+				options="DAC1 -&gt; ADC&#10;DAC2 -&gt; ADC&#10;External Input"
+				selected="0"
+			>
+				<style name="cal_field" />
+			</lv_dropdown>
+			<lv_label text="CALIBRATION ITEM" x="12" y="112" style_text_color="0x9aa4ad" />
+			<lv_dropdown name="cal_item_dropdown"
+				x="12"
+				y="132"
+				width="216"
+				height="38"
+				options="DC / AC Output Self Test&#10;Gain / Offset&#10;Frequency Response&#10;Channel Amp / Phase&#10;Safe Amplitude Limits"
+				selected="0"
+			>
+				<style name="cal_field" />
+			</lv_dropdown>
+			<lv_label text="LOWER LIMIT" x="12" y="184" style_text_color="0x9aa4ad" />
+			<lv_textarea name="cal_lower_limit" x="128" y="176" width="100" height="38" one_line="true" text="0.00 V">
+				<style name="cal_field" />
+			</lv_textarea>
+			<lv_label text="UPPER LIMIT" x="12" y="230" style_text_color="0x9aa4ad" />
+			<lv_textarea name="cal_upper_limit" x="128" y="222" width="100" height="38" one_line="true" text="3.00 V">
+				<style name="cal_field" />
+			</lv_textarea>
+			<lv_label text="RAMP STEP" x="12" y="276" style_text_color="0x9aa4ad" />
+			<lv_textarea name="cal_ramp_step" x="128" y="268" width="100" height="38" one_line="true" text="50 mV">
+				<style name="cal_field" />
+			</lv_textarea>
+			<lv_label text="DWELL TIME" x="12" y="322" style_text_color="0x9aa4ad" />
+			<lv_textarea name="cal_dwell_time" x="128" y="314" width="100" height="38" one_line="true" text="25 ms">
+				<style name="cal_field" />
+			</lv_textarea>
+			<lv_label name="cal_relay_label" text="Relay: P2-18 / P2-16" x="12" y="374" style_text_color="0x72eaa5" />
+		</lv_obj>
+
+		<lv_obj x="256" y="58" width="360" height="414" scrollable="false" scrollbar_mode="off">
+			<style name="cal_panel" />
+			<lv_label text="DC / AC OUTPUT SELF TEST" x="12" y="10" style_text_color="0x80d6ff" />
+			<lv_label text="STEP" x="12" y="36" style_text_color="0x9aa4ad" />
+			<lv_label name="cal_step_label" text="IDLE / WAITING FOR START" x="60" y="36" width="204" style_text_color="0x72eaa5" />
+			<lv_label text="PTS" x="272" y="36" style_text_color="0x9aa4ad" />
+			<lv_label name="cal_points_label" text="0 / 6" x="306" y="36" width="42" />
+			<lv_bar name="cal_progress_bar" x="12" y="58" width="336" height="14" min_value="0" max_value="100" value="0" />
+
+			<lv_label text="TEST" x="12" y="84" width="54" style_text_color="0x9aa4ad" />
+			<lv_label text="OUT" x="70" y="84" width="46" style_text_color="0x9aa4ad" />
+			<lv_label text="AMP" x="120" y="84" width="72" style_text_color="0x9aa4ad" />
+			<lv_label text="NOISE" x="196" y="84" width="66" style_text_color="0x9aa4ad" />
+			<lv_label text="RESULT" x="266" y="84" width="82" style_text_color="0x9aa4ad" />
+
+			<lv_label text="DC 1/4" x="12" y="112" width="54" style_text_color="0xd5dbe0" />
+			<lv_label name="cal_self_out_dc_q" text="--" x="70" y="112" width="46" style_text_color="0xd5dbe0" />
+			<lv_label name="cal_self_amp_dc_q" text="--" x="120" y="112" width="72" style_text_color="0xd5dbe0" />
+			<lv_label name="cal_self_noise_dc_q" text="--" x="196" y="112" width="66" style_text_color="0xd5dbe0" />
+			<lv_label name="cal_self_result_dc_q" text="NOT RUN" x="266" y="112" width="82" style_text_color="0x9aa4ad" />
+
+			<lv_label text="DC 1/2" x="12" y="140" width="54" style_text_color="0xd5dbe0" />
+			<lv_label name="cal_self_out_dc_h" text="--" x="70" y="140" width="46" style_text_color="0xd5dbe0" />
+			<lv_label name="cal_self_amp_dc_h" text="--" x="120" y="140" width="72" style_text_color="0xd5dbe0" />
+			<lv_label name="cal_self_noise_dc_h" text="--" x="196" y="140" width="66" style_text_color="0xd5dbe0" />
+			<lv_label name="cal_self_result_dc_h" text="NOT RUN" x="266" y="140" width="82" style_text_color="0x9aa4ad" />
+
+			<lv_label text="DC FULL" x="12" y="168" width="54" style_text_color="0xd5dbe0" />
+			<lv_label name="cal_self_out_dc_f" text="--" x="70" y="168" width="46" style_text_color="0xd5dbe0" />
+			<lv_label name="cal_self_amp_dc_f" text="--" x="120" y="168" width="72" style_text_color="0xd5dbe0" />
+			<lv_label name="cal_self_noise_dc_f" text="--" x="196" y="168" width="66" style_text_color="0xd5dbe0" />
+			<lv_label name="cal_self_result_dc_f" text="NOT RUN" x="266" y="168" width="82" style_text_color="0x9aa4ad" />
+
+			<lv_label text="AC 1/4" x="12" y="202" width="54" style_text_color="0xd5dbe0" />
+			<lv_label name="cal_self_out_ac_q" text="--" x="70" y="202" width="46" style_text_color="0xd5dbe0" />
+			<lv_label name="cal_self_amp_ac_q" text="--" x="120" y="202" width="72" style_text_color="0xd5dbe0" />
+			<lv_label name="cal_self_noise_ac_q" text="--" x="196" y="202" width="66" style_text_color="0xd5dbe0" />
+			<lv_label name="cal_self_result_ac_q" text="NOT RUN" x="266" y="202" width="82" style_text_color="0x9aa4ad" />
+
+			<lv_label text="AC 1/2" x="12" y="230" width="54" style_text_color="0xd5dbe0" />
+			<lv_label name="cal_self_out_ac_h" text="--" x="70" y="230" width="46" style_text_color="0xd5dbe0" />
+			<lv_label name="cal_self_amp_ac_h" text="--" x="120" y="230" width="72" style_text_color="0xd5dbe0" />
+			<lv_label name="cal_self_noise_ac_h" text="--" x="196" y="230" width="66" style_text_color="0xd5dbe0" />
+			<lv_label name="cal_self_result_ac_h" text="NOT RUN" x="266" y="230" width="82" style_text_color="0x9aa4ad" />
+
+			<lv_label text="AC FULL" x="12" y="258" width="54" style_text_color="0xd5dbe0" />
+			<lv_label name="cal_self_out_ac_f" text="--" x="70" y="258" width="46" style_text_color="0xd5dbe0" />
+			<lv_label name="cal_self_amp_ac_f" text="--" x="120" y="258" width="72" style_text_color="0xd5dbe0" />
+			<lv_label name="cal_self_noise_ac_f" text="--" x="196" y="258" width="66" style_text_color="0xd5dbe0" />
+			<lv_label name="cal_self_result_ac_f" text="NOT RUN" x="266" y="258" width="82" style_text_color="0x9aa4ad" />
+
+			<lv_label text="DC: 0.75 / 1.50 / 3.00 V" x="12" y="290" width="190" style_text_color="0x9aa4ad" />
+			<lv_label text="AC: 20 kHz / 0.8 Vpp max" x="12" y="312" width="190" style_text_color="0x9aa4ad" />
+			<lv_label text="LIMITS PROVISIONAL" x="210" y="312" width="138" style_text_color="0xff9f43" />
+			<lv_label text="ERROR" x="12" y="334" style_text_color="0x9aa4ad" />
+			<lv_label name="cal_error_label" text="--" x="70" y="334" width="278" />
+			<lv_obj x="12" y="346" width="336" height="58" scrollable="false" scrollbar_mode="off">
+				<style name="cal_field" />
+				<lv_label name="cal_storage_label" text="QSPI NOT READY" x="10" y="2" width="316" style_text_color="0xff9f43" />
+				<lv_label name="cal_profile_label" text="ACTIVE: OLD   PENDING: NONE" x="10" y="24" width="316" style_text_color="0x9aa4ad" />
+			</lv_obj>
+		</lv_obj>
+
+		<lv_obj x="624" y="58" width="168" height="414" scrollable="false" scrollbar_mode="off">
+			<style name="cal_panel" />
+			<lv_label text="CAL CONTROL" x="14" y="12" style_text_color="0x80d6ff" />
+			<lv_button x="8" y="38" width="152" height="36">
+				<style name="cal_primary" />
+				<lv_label text="HOME" align="center" />
+				<screen_create_event screen="screen_results" />
+			</lv_button>
+			<lv_button name="cal_start_button" x="8" y="82" width="152" height="38">
+				<style name="cal_safe" />
+				<lv_label text="START" align="center" />
+			</lv_button>
+			<lv_button name="cal_stop_button" x="8" y="126" width="152" height="38">
+				<style name="cal_stop" />
+				<lv_label text="STOP" align="center" />
+			</lv_button>
+			<lv_button name="cal_export_button" x="8" y="176" width="152" height="38">
+				<style name="cal_field" />
+				<lv_label text="EXPORT DATA" align="center" />
+			</lv_button>
+			<lv_button name="cal_import_button" x="8" y="220" width="152" height="38">
+				<style name="cal_field" />
+				<lv_label text="IMPORT RESULT" align="center" />
+			</lv_button>
+			<lv_button name="cal_confirm_button" x="8" y="270" width="72" height="38">
+				<style name="cal_safe" />
+				<lv_label text="CONFIRM" align="center" />
+			</lv_button>
+			<lv_button name="cal_cancel_button" x="88" y="270" width="72" height="38">
+				<style name="cal_stop" />
+				<lv_label text="CANCEL" align="center" />
+			</lv_button>
+			<lv_button name="cal_apply_button" x="8" y="318" width="152" height="44">
+				<style name="cal_pending" />
+				<lv_label text="APPLY NOW" align="center" />
+			</lv_button>
+			<lv_label text="After apply:" x="12" y="372" style_text_color="0x9aa4ad" />
+			<lv_label name="cal_apply_hint" text="UNDO APPLY" x="12" y="392" style_text_color="0xffd43b" />
+		</lv_obj>
+	</view>
+</screen>

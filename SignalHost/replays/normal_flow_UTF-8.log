@@ -1,0 +1,6 @@
+# SignalHost calibration replay UTF-8 v1: normal flow
+RX|[CTRL] OK UI CAL EXT ENTER
+RX|[CTRL] CAL state=3 error=0 can_start=1 mode=1 source=2 cand=0 pend=0 applied=0
+RX|[CTRL] OK CAL EXT POINT queued
+RX|[CAL] EXT n=1 ref_mv=0 mean=100.000 min=98 max=102 flags=0x0 crc=8F91A2B3
+RX|[CAL] STATUS state=6 error=0 exclusive=1 can_start=0 active=0 reason=NONE points=3/3 mode=1 source=2 item=1 cand=1 pend=0 applied=0

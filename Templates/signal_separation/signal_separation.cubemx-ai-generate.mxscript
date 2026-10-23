@@ -1,0 +1,3 @@
+config load "F:\\STM32\\stm32project\\VSCodeCMAKEProject\\signal_separation\\signal_separation.ioc"
+project generate
+exit

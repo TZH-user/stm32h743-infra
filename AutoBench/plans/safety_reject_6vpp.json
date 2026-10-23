@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "name": "safety_reject_6vpp",
+  "dut": "安全拒绝用例，不允许执行",
+  "source": {
+    "instrument": "dg4062",
+    "channel": 1,
+    "waveform": "sine",
+    "amplitude_vpp": 6.0,
+    "frequency_hz": 1000.0
+  },
+  "capture": {
+    "source": "simulate",
+    "samples": 4096
+  },
+  "metrics": ["vpp_ratio_db"],
+  "pass": {},
+  "safety": {
+    "amplitude_vpp_max": 5.0
+  }
+}
+

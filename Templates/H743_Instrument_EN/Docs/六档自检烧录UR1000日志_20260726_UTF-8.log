@@ -1,0 +1,20 @@
+{
+  "ok": false,
+  "argv": [
+    "E:\\ST\\STM32CubeProgrammer\\bin\\STM32_Programmer_CLI.exe",
+    "-c",
+    "port=SWD",
+    "mode=UR",
+    "freq=1000",
+    "-d",
+    "F:\\STM32\\stm32project\\VSCodeCMAKEProject\\signal_separation\\build\\Debug\\signal_separation.hex",
+    "-v",
+    "-rst",
+    "-run"
+  ],
+  "cwd": null,
+  "returncode": 1,
+  "stdout_tail": "      -------------------------------------------------------------------\r\n                       STM32CubeProgrammer v2.23.0                  \r\n      -------------------------------------------------------------------\r\n\r\nST-LINK error (DEV_USB_COMM_ERR)\r\n",
+  "stderr_tail": "",
+  "hardware_required": true
+}

@@ -1,0 +1,285 @@
+[2026-07-28T20:33:09.0290213+08:00] START image=8CF45FE584068ACD515152A3408511D2ECB26C557776953F19D27A94DA6CD85F
+[2026-07-28T20:33:33.8060362+08:00] SERIAL OUTPUT LOG
+[CTRL] OK OUTPUT log
+[2026-07-28T20:33:34.5908644+08:00] SERIAL CAL STATUS
+[CAL] STATUS v=3 state=6 error=0 exclusive=1 can_start=1
+[CAL] SESSION worker_active=0 reason=transfer_plateau points=42/42
+[CAL] SELECT mode=1 source=2 item=1 candidate=0
+[CAL] PROFILE configured=0 active=0 pending=0
+[CAL] PROFILE2 previous=0 undo_available=0 enabled=0 in_use=0 applied=0
+[CAL] ADC valid=0 seq=0 dc_uv=0 rms_uv=0 peak_uv=0
+[CAL] LAST output_mv=0 mean_mc=4015242 min=4010 max=4020
+[CAL] IO low=0 high=0 dir=-1 samples=4096
+[2026-07-28T20:33:35.3635141+08:00] SERIAL CAL EXT EXIT
+[CTRL] OK UI CAL EXT EXIT
+[CTRL] CAL state=7 error=0 can_start=1 mode=1 source=2 cand=0 pend=0 applied=0
+[2026-07-28T20:33:36.9492682+08:00] SERIAL CAL STATUS
+[CAL] STATUS v=3 state=0 error=0 exclusive=0 can_start=1
+[CAL] SESSION worker_active=0 reason=transfer_plateau points=42/42
+[CAL] SELECT mode=1 source=2 item=1 candidate=0
+[CAL] PROFILE configured=0 active=0 pending=0
+[CAL] PROFILE2 previous=0 undo_available=0 enabled=0 in_use=0 applied=0
+[CAL] ADC valid=0 seq=0 dc_uv=0 rms_uv=0 peak_uv=0
+[CAL] LAST output_mv=0 mean_mc=4015242 min=4010 max=4020
+[CAL] IO low=0 high=0 dir=-1 samples=4096
+[2026-07-28T20:33:37.7089454+08:00] SERIAL CAL EXT ENTER
+[CTRL] OK UI CAL EXT ENTER
+[CTRL] CAL state=1 error=0 can_start=1 mode=1 source=2 cand=0 pend=0 applied=0
+[2026-07-28T20:33:39.2848384+08:00] SERIAL CAL STATUS
+[CAL] STATUS v=3 state=3 error=0 exclusive=1 can_start=1
+[CAL] SESSION worker_active=0 reason=transfer_plateau points=42/42
+[CAL] SELECT mode=1 source=2 item=1 candidate=0
+[CAL] PROFILE configured=0 active=0 pending=0
+[CAL] PROFILE2 previous=0 undo_available=0 enabled=0 in_use=0 applied=0
+[CAL] ADC valid=0 seq=0 dc_uv=0 rms_uv=0 peak_uv=0
+[CAL] LAST output_mv=0 mean_mc=4015242 min=4010 max=4020
+[CAL] IO low=0 high=0 dir=-1 samples=4096
+[CAL] HW relay=0x0 dac_code=299 adc_run=0
+[2026-07-28T20:33:40.0541318+08:00] SERIAL CAL EXT START 42
+[CTRL] OK UI CAL EXT START
+[CTRL] CAL state=4 error=0 can_start=1 mode=1 source=2 cand=0 pend=0 applied=0
+[2026-07-28T20:33:41.8385037+08:00] SERIAL CAL STATUS
+[CAL] STATUS v=3 state=5 error=0 exclusive=1 can_start=1
+[CAL] SESSION worker_active=0 reason=transfer_plateau points=0/42
+[CAL] SELECT mode=1 source=2 item=1 candidate=0
+[CAL] PROFILE configured=0 active=0 pending=0
+[CAL] PROFILE2 previous=0 undo_available=0 enabled=0 in_use=0 applied=0
+[CAL] ADC valid=0 seq=0 dc_uv=0 rms_uv=0 peak_uv=0
+[CAL] LAST output_mv=0 mean_mc=4015242 min=4010 max=4020
+[CAL] IO low=0 high=0 dir=-1 samples=4096
+[2026-07-28T20:34:24.9947006+08:00] REF target=-0.500 dg=-1.334000 measured=-0.506853 vpp=0.015625 ds_scale=0.500 slope=0.471135 clamped=false quantized=true
+[2026-07-28T20:34:46.2545946+08:00] REF target=-1.000 dg=-2.380700 measured=-1.042455 vpp=0.015625 ds_scale=0.500 slope=0.481278 clamped=false quantized=true
+[2026-07-28T20:35:07.4644998+08:00] REF target=-1.500 dg=-3.331400 measured=-1.523560 vpp=0.015625 ds_scale=0.500 slope=0.487472 clamped=false quantized=true
+[2026-07-28T20:35:28.6437619+08:00] REF target=-2.000 dg=-4.308800 measured=-2.023449 vpp=0.015625 ds_scale=0.500 slope=0.493465 clamped=false quantized=true
+[2026-07-28T20:35:49.9884197+08:00] REF target=-2.500 dg=-5.274500 measured=-2.507355 vpp=0.015625 ds_scale=0.500 slope=0.495373 clamped=false quantized=true
+[2026-07-28T20:36:11.2680276+08:00] REF target=-3.000 dg=-6.269000 measured=-3.008783 vpp=0.015625 ds_scale=0.500 slope=0.497580 clamped=false quantized=true
+[2026-07-28T20:36:32.3680463+08:00] REF target=-3.500 dg=-7.256200 measured=-3.509989 vpp=0.015625 ds_scale=0.500 slope=0.500111 clamped=false quantized=true
+[2026-07-28T20:36:53.6250023+08:00] REF target=-4.000 dg=-8.236000 measured=-4.006071 vpp=0.015625 ds_scale=0.500 slope=0.501661 clamped=false quantized=true
+[2026-07-28T20:37:14.9556280+08:00] REF target=-4.500 dg=-9.220600 measured=-4.508337 vpp=0.015625 ds_scale=0.500 slope=0.503776 clamped=false quantized=true
+[2026-07-28T20:37:36.4265531+08:00] REF target=-4.600 dg=-9.402600 measured=-4.599766 vpp=0.015625 ds_scale=0.500 slope=0.503776 clamped=false quantized=true
+[2026-07-28T20:37:36.5580114+08:00] SERIAL CAL EXT POINT -4600
+[CTRL] OK CAL EXT POINT queued
+[CAL] EXT n=1 ref_mv=-4600 mean=4016.973 min=4012 max=4021 flags=0x0 crc=fa54351a
+[2026-07-28T20:37:58.1902175+08:00] REF target=-4.500 dg=-9.204600 measured=-4.501228 vpp=0.031250 ds_scale=0.500 slope=0.503776 clamped=false quantized=true
+[2026-07-28T20:37:58.3046746+08:00] SERIAL CAL EXT POINT -4501
+[CTRL] OK CAL EXT POINT queued
+[CAL] EXT n=2 ref_mv=-4501 mean=3975.458 min=3970 max=3980 flags=0x0 crc=c7fe6e57
+[2026-07-28T20:38:19.4680769+08:00] REF target=-4.000 dg=-8.209700 measured=-3.991886 vpp=0.015625 ds_scale=0.500 slope=0.505820 clamped=false quantized=true
+[2026-07-28T20:38:19.5926959+08:00] SERIAL CAL EXT POINT -3992
+[CTRL] OK CAL EXT POINT queued
+[CAL] EXT n=3 ref_mv=-3992 mean=3766.895 min=3763 max=3771 flags=0x0 crc=7bc43b63
+[2026-07-28T20:38:40.5999729+08:00] REF target=-3.500 dg=-7.237200 measured=-3.498069 vpp=0.015625 ds_scale=0.500 slope=0.506310 clamped=false quantized=true
+[2026-07-28T20:38:40.7112180+08:00] SERIAL CAL EXT POINT -3498
+[CTRL] OK CAL EXT POINT queued
+[CAL] EXT n=4 ref_mv=-3498 mean=3563.332 min=3559 max=3568 flags=0x0 crc=9e181ddb
+[2026-07-28T20:39:01.8734971+08:00] REF target=-3.000 dg=-6.253500 measured=-3.002946 vpp=0.015625 ds_scale=0.500 slope=0.505564 clamped=false quantized=true
+[2026-07-28T20:39:01.9813939+08:00] SERIAL CAL EXT POINT -3003
+[CTRL] OK CAL EXT POINT queued
+[CAL] EXT n=5 ref_mv=-3003 mean=3357.630 min=3353 max=3362 flags=0x0 crc=1fc37347
+[2026-07-28T20:39:23.3687866+08:00] REF target=-2.500 dg=-5.258700 measured=-2.495703 vpp=0.015625 ds_scale=0.500 slope=0.506647 clamped=false quantized=true
+[2026-07-28T20:39:23.4759356+08:00] SERIAL CAL EXT POINT -2496
+[CTRL] OK CAL EXT POINT queued
+[CAL] EXT n=6 ref_mv=-2496 mean=3150.146 min=3146 max=3154 flags=0x0 crc=2fbd2aef
+[2026-07-28T20:39:44.6874992+08:00] REF target=-2.000 dg=-4.280300 measured=-2.006987 vpp=0.015625 ds_scale=0.500 slope=0.504862 clamped=false quantized=true
+[2026-07-28T20:39:44.7990780+08:00] SERIAL CAL EXT POINT -2007
+[CTRL] OK CAL EXT POINT queued
+[CAL] EXT n=7 ref_mv=-2007 mean=2945.888 min=2941 max=2950 flags=0x0 crc=9bc03f41
+[2026-07-28T20:40:06.1690646+08:00] REF target=-1.500 dg=-3.276100 measured=-1.492277 vpp=0.015625 ds_scale=0.500 slope=0.506786 clamped=false quantized=true
+[2026-07-28T20:40:06.2746104+08:00] SERIAL CAL EXT POINT -1492
+[CTRL] OK CAL EXT POINT queued
+[CAL] EXT n=8 ref_mv=-1492 mean=2736.463 min=2732 max=2741 flags=0x0 crc=f51e7965
+[2026-07-28T20:40:27.5651205+08:00] REF target=-1.000 dg=-2.304700 measured=-1.006306 vpp=0.015625 ds_scale=0.500 slope=0.505159 clamped=false quantized=true
+[2026-07-28T20:40:27.6879061+08:00] SERIAL CAL EXT POINT -1006
+[CTRL] OK CAL EXT POINT queued
+[CAL] EXT n=9 ref_mv=-1006 mean=2533.522 min=2529 max=2538 flags=0x0 crc=7fd30d43
+[2026-07-28T20:40:49.0238980+08:00] REF target=-0.500 dg=-1.302400 measured=-0.484676 vpp=0.031250 ds_scale=0.500 slope=0.508977 clamped=false quantized=true
+[2026-07-28T20:40:49.1295943+08:00] SERIAL CAL EXT POINT -485
+[CTRL] OK CAL EXT POINT queued
+[CAL] EXT n=10 ref_mv=-485 mean=2319.422 min=2314 max=2324 flags=0x0 crc=d1e9e7fe
+[2026-07-28T20:41:10.2505231+08:00] REF target=0.000 dg=-0.350100 measured=-0.009967 vpp=0.015625 ds_scale=0.500 slope=0.506355 clamped=false quantized=true
+[2026-07-28T20:41:10.3720727+08:00] SERIAL CAL EXT POINT -10
+[CTRL] OK CAL EXT POINT queued
+[CAL] EXT n=11 ref_mv=-10 mean=2124.900 min=2121 max=2129 flags=0x0 crc=bbf152f4
+[2026-07-28T20:41:31.9308843+08:00] REF target=0.500 dg=0.657000 measured=0.485770 vpp=0.015625 ds_scale=0.500 slope=0.502827 clamped=false quantized=true
+[2026-07-28T20:41:32.0675083+08:00] SERIAL CAL EXT POINT 486
+[CTRL] OK CAL EXT POINT queued
+[CAL] EXT n=12 ref_mv=486 mean=1919.283 min=1914 max=1924 flags=0x0 crc=4f7fddf1
+[2026-07-28T20:41:54.5257430+08:00] REF target=1.000 dg=1.679700 measured=0.992388 vpp=0.015625 ds_scale=0.500 slope=0.500963 clamped=false quantized=true
+[2026-07-28T20:41:54.6335592+08:00] SERIAL CAL EXT POINT 992
+[CTRL] OK CAL EXT POINT queued
+[CAL] EXT n=13 ref_mv=992 mean=1710.529 min=1705 max=1715 flags=0x0 crc=12717f82
+[2026-07-28T20:42:16.0868488+08:00] REF target=1.500 dg=2.693000 measured=1.525279 vpp=0.015625 ds_scale=0.500 slope=0.507197 clamped=false quantized=true
+[2026-07-28T20:42:16.2017186+08:00] SERIAL CAL EXT POINT 1525
+[CTRL] OK CAL EXT POINT queued
+[CAL] EXT n=14 ref_mv=1525 mean=1491.469 min=1487 max=1496 flags=0x0 crc=1fa54486
+[2026-07-28T20:42:37.6766457+08:00] REF target=2.000 dg=3.629000 measured=1.993359 vpp=0.015625 ds_scale=0.500 slope=0.505419 clamped=false quantized=true
+[2026-07-28T20:42:37.7840986+08:00] SERIAL CAL EXT POINT 1993
+[CTRL] OK CAL EXT POINT queued
+[CAL] EXT n=15 ref_mv=1993 mean=1296.194 min=1292 max=1301 flags=0x0 crc=1211f8b5
+[2026-07-28T20:42:59.3268495+08:00] REF target=2.500 dg=4.631400 measured=2.506540 vpp=0.015625 ds_scale=0.500 slope=0.507052 clamped=false quantized=true
+[2026-07-28T20:42:59.4334703+08:00] SERIAL CAL EXT POINT 2507
+[CTRL] OK CAL EXT POINT queued
+[CAL] EXT n=16 ref_mv=2507 mean=1086.898 min=1081 max=1092 flags=0x0 crc=7bc6a4f6
+[2026-07-28T20:43:23.9105600+08:00] REF target=3.000 dg=5.604600 measured=2.998772 vpp=0.015625 ds_scale=0.500 slope=0.506736 clamped=false quantized=true
+[2026-07-28T20:43:24.0197372+08:00] SERIAL CAL EXT POINT 2999
+[CTRL] OK CAL EXT POINT queued
+[CAL] EXT n=17 ref_mv=2999 mean=883.623 min=879 max=888 flags=0x0 crc=d3e731b2
+[2026-07-28T20:43:45.2347865+08:00] REF target=3.500 dg=6.593700 measured=3.492801 vpp=0.015625 ds_scale=0.500 slope=0.504920 clamped=false quantized=true
+[2026-07-28T20:43:45.3536058+08:00] SERIAL CAL EXT POINT 3493
+[CTRL] OK CAL EXT POINT queued
+[CAL] EXT n=18 ref_mv=3493 mean=676.806 min=673 max=681 flags=0x0 crc=9d5ea317
+[2026-07-28T20:44:06.7243955+08:00] REF target=4.000 dg=7.598200 measured=4.009230 vpp=0.015625 ds_scale=0.500 slope=0.507219 clamped=false quantized=true
+[2026-07-28T20:44:06.8422784+08:00] SERIAL CAL EXT POINT 4009
+[CTRL] OK CAL EXT POINT queued
+[CAL] EXT n=19 ref_mv=4009 mean=466.759 min=462 max=471 flags=0x0 crc=3a8e2fca
+[2026-07-28T20:44:28.3360361+08:00] REF target=4.500 dg=8.565800 measured=4.502545 vpp=0.015625 ds_scale=0.500 slope=0.507873 clamped=false quantized=true
+[2026-07-28T20:44:28.4428205+08:00] SERIAL CAL EXT POINT 4503
+[CTRL] OK CAL EXT POINT queued
+[CAL] EXT n=20 ref_mv=4503 mean=264.087 min=259 max=269 flags=0x0 crc=559365c1
+[2026-07-28T20:44:49.6931691+08:00] REF target=4.600 dg=8.757700 measured=4.587087 vpp=0.015625 ds_scale=0.500 slope=0.507873 clamped=false quantized=true
+[2026-07-28T20:44:49.8161838+08:00] SERIAL CAL EXT POINT 4587
+[CTRL] OK CAL EXT POINT queued
+[CAL] EXT n=21 ref_mv=4587 mean=223.747 min=219 max=228 flags=0x0 crc=dc82cddb
+[2026-07-28T20:45:11.0575786+08:00] REF target=4.600 dg=8.783100 measured=4.601987 vpp=0.015625 ds_scale=0.500 slope=0.507873 clamped=false quantized=true
+[2026-07-28T20:45:11.1880245+08:00] SERIAL CAL EXT POINT 4602
+[CTRL] OK CAL EXT POINT queued
+[CAL] EXT n=22 ref_mv=4602 mean=218.208 min=214 max=223 flags=0x0 crc=76683a84
+[2026-07-28T20:45:32.5835957+08:00] REF target=4.500 dg=8.582300 measured=4.509163 vpp=0.015625 ds_scale=0.500 slope=0.496472 clamped=false quantized=true
+[2026-07-28T20:45:32.7024865+08:00] SERIAL CAL EXT POINT 4509
+[CTRL] OK CAL EXT POINT queued
+[CAL] EXT n=23 ref_mv=4509 mean=260.302 min=255 max=265 flags=0x0 crc=32679b88
+[2026-07-28T20:45:54.0832524+08:00] REF target=4.000 dg=7.556700 measured=3.986942 vpp=0.015625 ds_scale=0.500 slope=0.499650 clamped=false quantized=true
+[2026-07-28T20:45:54.1962404+08:00] SERIAL CAL EXT POINT 3987
+[CTRL] OK CAL EXT POINT queued
+[CAL] EXT n=24 ref_mv=3987 mean=474.839 min=471 max=479 flags=0x0 crc=d4021b88
+[2026-07-28T20:46:15.7194868+08:00] REF target=3.500 dg=6.582100 measured=3.490993 vpp=0.015625 ds_scale=0.500 slope=0.501956 clamped=false quantized=true
+[2026-07-28T20:46:15.8419956+08:00] SERIAL CAL EXT POINT 3491
+[CTRL] OK CAL EXT POINT queued
+[CAL] EXT n=25 ref_mv=3491 mean=678.833 min=674 max=684 flags=0x0 crc=4106f02b
+[2026-07-28T20:46:37.2564637+08:00] REF target=3.000 dg=5.603900 measured=2.997667 vpp=0.015625 ds_scale=0.500 slope=0.502547 clamped=false quantized=true
+[2026-07-28T20:46:37.3755204+08:00] SERIAL CAL EXT POINT 2998
+[CTRL] OK CAL EXT POINT queued
+[CAL] EXT n=26 ref_mv=2998 mean=883.504 min=878 max=888 flags=0x0 crc=e015f812
+[2026-07-28T20:46:58.5861616+08:00] REF target=2.500 dg=4.613600 measured=2.491886 vpp=0.015625 ds_scale=0.500 slope=0.504594 clamped=false quantized=true
+[2026-07-28T20:46:58.6979769+08:00] SERIAL CAL EXT POINT 2492
+[CTRL] OK CAL EXT POINT queued
+[CAL] EXT n=27 ref_mv=2492 mean=1090.430 min=1086 max=1095 flags=0x0 crc=1eb89f42
+[2026-07-28T20:47:19.9331036+08:00] REF target=2.000 dg=3.638800 measured=1.999487 vpp=0.031250 ds_scale=0.500 slope=0.504728 clamped=false quantized=true
+[2026-07-28T20:47:20.0413619+08:00] SERIAL CAL EXT POINT 1999
+[CTRL] OK CAL EXT POINT queued
+[CAL] EXT n=28 ref_mv=1999 mean=1293.975 min=1290 max=1298 flags=0x0 crc=ca6c2ac9
+[2026-07-28T20:47:41.2266156+08:00] REF target=1.500 dg=2.649200 measured=1.504665 vpp=0.015625 ds_scale=0.500 slope=0.503551 clamped=false quantized=true
+[2026-07-28T20:47:41.3343684+08:00] SERIAL CAL EXT POINT 1505
+[CTRL] OK CAL EXT POINT queued
+[CAL] EXT n=29 ref_mv=1505 mean=1500.114 min=1496 max=1505 flags=0x0 crc=5f893916
+[2026-07-28T20:48:02.5480243+08:00] REF target=1.000 dg=1.647000 measured=0.973917 vpp=0.015625 ds_scale=0.500 slope=0.510059 clamped=false quantized=true
+[2026-07-28T20:48:02.6739050+08:00] SERIAL CAL EXT POINT 974
+[CTRL] OK CAL EXT POINT queued
+[CAL] EXT n=30 ref_mv=974 mean=1717.189 min=1712 max=1722 flags=0x0 crc=830571b2
+[2026-07-28T20:48:23.9723735+08:00] REF target=0.500 dg=0.717900 measured=0.512533 vpp=0.015625 ds_scale=0.500 slope=0.506692 clamped=false quantized=true
+[2026-07-28T20:48:24.0952139+08:00] SERIAL CAL EXT POINT 513
+[CTRL] OK CAL EXT POINT queued
+[CAL] EXT n=31 ref_mv=513 mean=1906.743 min=1902 max=1911 flags=0x0 crc=f3442d98
+[2026-07-28T20:48:45.5125017+08:00] REF target=0.000 dg=-0.293600 measured=0.016775 vpp=0.015625 ds_scale=0.500 slope=0.502550 clamped=false quantized=true
+[2026-07-28T20:48:45.6233304+08:00] SERIAL CAL EXT POINT 17
+[CTRL] OK CAL EXT POINT queued
+[CAL] EXT n=32 ref_mv=17 mean=2113.266 min=2108 max=2118 flags=0x0 crc=47c00106
+[2026-07-28T20:49:06.7971858+08:00] REF target=-0.500 dg=-1.321900 measured=-0.495781 vpp=0.015625 ds_scale=0.500 slope=0.501525 clamped=false quantized=true
+[2026-07-28T20:49:06.9049191+08:00] SERIAL CAL EXT POINT -496
+[CTRL] OK CAL EXT POINT queued
+[CAL] EXT n=33 ref_mv=-496 mean=2323.220 min=2318 max=2328 flags=0x0 crc=ff18685e
+[2026-07-28T20:49:28.1929513+08:00] REF target=-1.000 dg=-2.327300 measured=-1.019833 vpp=0.015625 ds_scale=0.500 slope=0.506453 clamped=false quantized=true
+[2026-07-28T20:49:28.3106633+08:00] SERIAL CAL EXT POINT -1020
+[CTRL] OK CAL EXT POINT queued
+[CAL] EXT n=34 ref_mv=-1020 mean=2538.354 min=2534 max=2543 flags=0x0 crc=632822f1
+[2026-07-28T20:49:49.7307296+08:00] REF target=-1.500 dg=-3.275400 measured=-1.493025 vpp=0.015625 ds_scale=0.500 slope=0.504613 clamped=false quantized=true
+[2026-07-28T20:49:49.8445844+08:00] SERIAL CAL EXT POINT -1493
+[CTRL] OK CAL EXT POINT queued
+[CAL] EXT n=35 ref_mv=-1493 mean=2736.332 min=2732 max=2741 flags=0x0 crc=ac5136f4
+[2026-07-28T20:50:11.3912806+08:00] REF target=-2.000 dg=-4.280100 measured=-2.007221 vpp=0.015625 ds_scale=0.500 slope=0.506408 clamped=false quantized=true
+[2026-07-28T20:50:11.5127244+08:00] SERIAL CAL EXT POINT -2007
+[CTRL] OK CAL EXT POINT queued
+[CAL] EXT n=36 ref_mv=-2007 mean=2945.804 min=2941 max=2951 flags=0x0 crc=6fc136c2
+[2026-07-28T20:50:32.8674189+08:00] REF target=-2.500 dg=-5.253200 measured=-2.493661 vpp=0.015625 ds_scale=0.500 slope=0.504778 clamped=false quantized=true
+[2026-07-28T20:50:32.9740437+08:00] SERIAL CAL EXT POINT -2494
+[CTRL] OK CAL EXT POINT queued
+[CAL] EXT n=37 ref_mv=-2494 mean=3148.984 min=3144 max=3153 flags=0x0 crc=ee4b9bcf
+[2026-07-28T20:50:54.1351656+08:00] REF target=-3.000 dg=-6.256300 measured=-3.007165 vpp=0.015625 ds_scale=0.500 slope=0.506563 clamped=false quantized=true
+[2026-07-28T20:50:54.2397531+08:00] SERIAL CAL EXT POINT -3007
+[CTRL] OK CAL EXT POINT queued
+[CAL] EXT n=38 ref_mv=-3007 mean=3358.066 min=3353 max=3362 flags=0x0 crc=00bdd378
+[2026-07-28T20:51:15.5600280+08:00] REF target=-3.500 dg=-7.229200 measured=-3.493415 vpp=0.015625 ds_scale=0.500 slope=0.504870 clamped=false quantized=true
+[2026-07-28T20:51:15.6674570+08:00] SERIAL CAL EXT POINT -3493
+[CTRL] OK CAL EXT POINT queued
+[CAL] EXT n=39 ref_mv=-3493 mean=3561.404 min=3557 max=3566 flags=0x0 crc=348afc87
+[2026-07-28T20:51:36.9596305+08:00] REF target=-4.000 dg=-8.232600 measured=-4.007054 vpp=0.015625 ds_scale=0.500 slope=0.506627 clamped=false quantized=true
+[2026-07-28T20:51:37.0657898+08:00] SERIAL CAL EXT POINT -4007
+[CTRL] OK CAL EXT POINT queued
+[CAL] EXT n=40 ref_mv=-4007 mean=3771.501 min=3767 max=3776 flags=0x0 crc=8fe1fdd8
+[2026-07-28T20:51:58.3947073+08:00] REF target=-4.500 dg=-9.205600 measured=-4.504587 vpp=0.015625 ds_scale=0.500 slope=0.507805 clamped=false quantized=true
+[2026-07-28T20:51:58.5035878+08:00] SERIAL CAL EXT POINT -4505
+[CTRL] OK CAL EXT POINT queued
+[CAL] EXT n=41 ref_mv=-4505 mean=3975.668 min=3971 max=3980 flags=0x0 crc=3c9d384b
+[2026-07-28T20:52:19.4962222+08:00] REF target=-4.600 dg=-9.393500 measured=-4.590446 vpp=0.015625 ds_scale=0.500 slope=0.507805 clamped=false quantized=true
+[2026-07-28T20:52:19.6000972+08:00] SERIAL CAL EXT POINT -4590
+[CTRL] OK CAL EXT POINT queued
+[CAL] EXT n=42 ref_mv=-4590 mean=4014.899 min=4010 max=4020 flags=0x0 crc=2ab879a6
+[2026-07-28T20:52:20.3708389+08:00] SERIAL CAL EXT FINISH
+[CTRL] OK UI CAL EXT FINISH
+[CTRL] CAL state=5 error=0 can_start=1 mode=1 source=2 cand=0 pend=0 applied=0
+[2026-07-28T20:52:22.3581099+08:00] SERIAL CAL STATUS
+[CAL] STATUS v=3 state=6 error=0 exclusive=1 can_start=1
+[CAL] SESSION worker_active=0 reason=transfer_plateau points=42/42
+[CAL] SELECT mode=1 source=2 item=1 candidate=0
+[CAL] PROFILE configured=0 active=0 pending=0
+[CAL] PROFILE2 previous=0 undo_available=0 enabled=0 in_use=0 applied=0
+[CAL] ADC valid=0 seq=0 dc_uv=0 rms_uv=0 peak_uv=0
+[CAL] LAST output_mv=0 mean_mc=4014899 min=4010 max=4020
+[CAL] IO low=0 high=0 dir=-1 samples=4096
+[2026-07-28T20:52:23.3431660+08:00] SERIAL CAL EXPORT LATEST
+[CTRL] OK CAL EXPORT queued sequence=0
+[CAL] EXPORT B s=123 v=1 mo=1 so=2 it=1 ep=42 np=42 c=fbded578
+[CAL] EXPORT P s=123 i=0 r=c0933333 m=457b0f91 f=0 p=00000000 g=00000000 c=049d044f
+[CAL] EXPORT P s=123 i=1 r=c0900831 m=45787754 f=0 p=00000000 g=00000000 c=068a8c7b
+[CAL] EXPORT P s=123 i=2 r=c07f7cee m=456b6e50 f=0 p=00000000 g=00000000 c=16514c38
+[CAL] EXPORT P s=123 i=3 r=c05fdf3b m=455eb550 f=0 p=00000000 g=00000000 c=f00edf4b
+[CAL] EXPORT P s=123 i=4 r=c0403127 m=4551da13 f=0 p=00000000 g=00000000 c=3956958f
+[CAL] EXPORT P s=123 i=5 r=c01fbe77 m=4544e254 f=0 p=00000000 g=00000000 c=650f69ea
+[CAL] EXPORT P s=123 i=6 r=c00072b0 m=45381e36 f=0 p=00000000 g=00000000 c=461bfa53
+[CAL] EXPORT P s=123 i=7 r=bfbef9db m=452b0767 f=0 p=00000000 g=00000000 c=43ecf7ae
+[CAL] EXPORT P s=123 i=8 r=bf80c49c m=451e585b f=0 p=00000000 g=00000000 c=5c2b41f6
+[CAL] EXPORT P s=123 i=9 r=bef851ec m=4510f6bf f=0 p=00000000 g=00000000 c=2c882a0d
+[CAL] EXPORT P s=123 i=10 r=bc23d70a m=4504ce64 f=0 p=00000000 g=00000000 c=4a722df6
+[CAL] EXPORT P s=123 i=11 r=3ef8d4fe m=44efe90a f=0 p=00000000 g=00000000 c=3ddf71a1
+[CAL] EXPORT P s=123 i=12 r=3f7df3b6 m=44d5d0ea f=0 p=00000000 g=00000000 c=92f9fe9d
+[CAL] EXPORT P s=123 i=13 r=3fc33333 m=44ba6f00 f=0 p=00000000 g=00000000 c=5cd63981
+[CAL] EXPORT P s=123 i=14 r=3fff1aa0 m=44a20638 f=0 p=00000000 g=00000000 c=0c3f43d3
+[CAL] EXPORT P s=123 i=15 r=402072b0 m=4487dcb8 f=0 p=00000000 g=00000000 c=52f36ea6
+[CAL] EXPORT P s=123 i=16 r=403fef9e m=445ce7d8 f=0 p=00000000 g=00000000 c=f7016be5
+[CAL] EXPORT P s=123 i=17 r=405f8d50 m=44293390 f=0 p=00000000 g=00000000 c=31c05152
+[CAL] EXPORT P s=123 i=18 r=408049ba m=43e96130 f=0 p=00000000 g=00000000 c=020fcb37
+[CAL] EXPORT P s=123 i=19 r=40901893 m=43840b20 f=0 p=00000000 g=00000000 c=bf7584b3
+[CAL] EXPORT P s=123 i=20 r=4092c8b4 m=435fbf20 f=0 p=00000000 g=00000000 c=665e3d41
+[CAL] EXPORT P s=123 i=21 r=40934396 m=435a3540 f=0 p=00000000 g=00000000 c=fdb2801c
+[CAL] EXPORT P s=123 i=22 r=409049ba m=438226a0 f=0 p=00000000 g=00000000 c=046984e6
+[CAL] EXPORT P s=123 i=23 r=407f2b02 m=43ed6b58 f=0 p=00000000 g=00000000 c=b4aa0c2e
+[CAL] EXPORT P s=123 i=24 r=405f6c8b m=4429b550 f=0 p=00000000 g=00000000 c=85fc7c46
+[CAL] EXPORT P s=123 i=25 r=403fdf3b m=445ce044 f=0 p=00000000 g=00000000 c=1eb9e97b
+[CAL] EXPORT P s=123 i=26 r=401f7cee m=44884dc6 f=0 p=00000000 g=00000000 c=95bc3d7c
+[CAL] EXPORT P s=123 i=27 r=3fffdf3b m=44a1bf34 f=0 p=00000000 g=00000000 c=73f83a76
+[CAL] EXPORT P s=123 i=28 r=3fc0a3d7 m=44bb83a4 f=0 p=00000000 g=00000000 c=7eab7b15
+[CAL] EXPORT P s=123 i=29 r=3f795810 m=44d6a60a f=0 p=00000000 g=00000000 c=4766daf7
+[CAL] EXPORT P s=123 i=30 r=3f0353f8 m=44ee57c6 f=0 p=00000000 g=00000000 c=535c1524
+[CAL] EXPORT P s=123 i=31 r=3c8b4396 m=45041443 f=0 p=00000000 g=00000000 c=616fc46e
+[CAL] EXPORT P s=123 i=32 r=befdf3b6 m=45113384 f=0 p=00000000 g=00000000 c=034ff237
+[CAL] EXPORT P s=123 i=33 r=bf828f5c m=451ea5ab f=0 p=00000000 g=00000000 c=d747bbbd
+[CAL] EXPORT P s=123 i=34 r=bfbf1aa0 m=452b054e f=0 p=00000000 g=00000000 c=610781f8
+[CAL] EXPORT P s=123 i=35 r=c00072b0 m=45381cdc f=0 p=00000000 g=00000000 c=7f92919d
+[CAL] EXPORT P s=123 i=36 r=c01f9db2 m=4544cfbf f=0 p=00000000 g=00000000 c=def2ae2e
+[CAL] EXPORT P s=123 i=37 r=c04072b0 m=4551e10f f=0 p=00000000 g=00000000 c=ee2d58ed
+[CAL] EXPORT P s=123 i=38 r=c05f8d50 m=455e9677 f=0 p=00000000 g=00000000 c=b4f8b212
+[CAL] EXPORT P s=123 i=39 r=c0803958 m=456bb802 f=0 p=00000000 g=00000000 c=4c5af0a0
+[CAL] EXPORT P s=123 i=40 r=c09028f6 m=45787ab0 f=0 p=00000000 g=00000000 c=d2c0e23e
+[CAL] EXPORT P s=123 i=41 r=c092e148 m=457aee63 f=0 p=00000000 g=00000000 c=8ae68f25
+[CAL] EXPORT E s=123 n=42 c=0d94a1f7
+[2026-07-28T20:52:23.4003400+08:00] FIT {"quality_pass":false,"point_count":38,"gain_code_per_v":-412.40217767274504,"offset_code":2119.451107815013,"r2":0.9999990331848746,"max_abs_residual_code":2.206229315303972,"max_hysteresis_code":12.539999999999964,"max_frame_pp_code":11.0,"rail_safe":true,"gain_mcpv":-412402,"offset_mc":2119451,"r2_ppm":999999,"residual_mc":2207,"crc32":"3D4E58A9","import_command":"CAL IMPORT ADC -412402 2119451 999999 2207 38 3D4E58A9","csv_path":"F:\\STM32\\stm32project\\VSCodeCMAKEProject\\signal_separation\\Docs\\ADC校准全流程扫点_20260728_203309_UTF-8.csv","serial_log_path":"F:\\STM32\\stm32project\\VSCodeCMAKEProject\\signal_separation\\Docs\\ADC校准全流程串口_20260728_203309_UTF-8.txt"}

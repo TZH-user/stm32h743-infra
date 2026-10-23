@@ -1,0 +1,5 @@
+# SignalHost calibration replay UTF-8 v1: confirm/apply failure
+RX|[CTRL] ERR UI CAL CONFIRM
+RX|[CTRL] CAL state=6 error=8 can_start=0 mode=1 source=2 cand=1 pend=0 applied=0
+RX|[CTRL] ERR UI CAL APPLY
+RX|[CAL] STATUS state=6 error=8 exclusive=1 can_start=0 active=0 reason=IO_ERROR points=3/3 mode=1 source=2 item=1 cand=1 pend=0 applied=0

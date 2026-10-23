@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "name": "board_vcp_demo",
+  "dut": "开发板 VCP 导出的单频 CSV",
+  "source": {
+    "instrument": "dg4062",
+    "channel": 1,
+    "waveform": "sine",
+    "amplitude_vpp": 1.0,
+    "offset_v": 0.0,
+    "frequency_hz": 1000.0
+  },
+  "capture": {
+    "source": "board_vcp",
+    "path": "../examples/board_vcp_1k_UTF-8.csv",
+    "samples": 4096
+  },
+  "metrics": ["vpp_ratio_db", "thd", "snr", "frequency_accuracy"],
+  "pass": {
+    "thd_percent_max": 2.0,
+    "snr_db_min": 40.0,
+    "frequency_error_ppm_max": 500.0
+  },
+  "safety": {
+    "amplitude_vpp_max": 5.0
+  }
+}
+

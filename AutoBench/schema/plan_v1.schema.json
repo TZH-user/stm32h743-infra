@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "autobench-plan-v1",
+  "title": "AutoBench 离线测量计划 v1",
+  "type": "object",
+  "required": ["name", "dut", "source", "capture", "metrics", "pass"],
+  "additionalProperties": false,
+  "properties": {
+    "version": {"const": 1},
+    "name": {"type": "string", "minLength": 1},
+    "dut": {"type": "string", "minLength": 1},
+    "source": {
+      "type": "object",
+      "required": ["instrument", "channel", "waveform", "amplitude_vpp"],
+      "additionalProperties": false,
+      "properties": {
+        "instrument": {"const": "dg4062"},
+        "channel": {"enum": [1, 2]},
+        "waveform": {"enum": ["sine", "square", "ramp", "pulse", "noise"]},
+        "amplitude_vpp": {"type": "number", "exclusiveMinimum": 0},
+        "offset_v": {"type": "number"},
+        "frequency_hz": {"type": "number", "exclusiveMinimum": 0},
+        "sweep": {
+          "type": "object",
+          "required": ["start_hz", "stop_hz", "points", "spacing"],
+          "additionalProperties": false,
+          "properties": {
+            "start_hz": {"type": "number", "exclusiveMinimum": 0},
+            "stop_hz": {"type": "number", "exclusiveMinimum": 0},
+            "points": {"type": "integer", "minimum": 1, "maximum": 10000},
+            "spacing": {"enum": ["linear", "log"]}
+          }
+        }
+      },
+      "oneOf": [
+        {"required": ["frequency_hz"], "not": {"required": ["sweep"]}},
+        {"required": ["sweep"], "not": {"required": ["frequency_hz"]}}
+      ]
+    },
+    "capture": {
+      "type": "object",
+      "required": ["source"],
+      "additionalProperties": false,
+      "properties": {
+        "source": {"enum": ["simulate", "board_vcp", "scope"]},
+        "channel": {"enum": [1, 2, 3, 4]},
+        "settle_ms": {"type": "integer", "minimum": 0},
+        "sample_rate_hz": {"type": "number", "exclusiveMinimum": 0},
+        "samples": {"type": "integer", "minimum": 64, "maximum": 10000000},
+        "path": {"type": "string", "minLength": 1}
+      }
+    },
+    "simulation": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "gain_db": {"type": "number"},
+        "cutoff_hz": {"type": "number", "exclusiveMinimum": 0},
+        "noise_snr_db": {"type": "number"},
+        "frequency_error_ppm": {"type": "number"},
+        "harmonics_dbc": {"type": "object"},
+        "seed": {"type": "integer"}
+      }
+    },
+    "metrics": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"enum": ["vpp_ratio_db", "thd", "snr", "frequency_accuracy"]}
+    },
+    "pass": {"type": "object"},
+    "safety": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "amplitude_vpp_max": {"type": "number", "exclusiveMinimum": 0}
+      }
+    }
+  }
+}

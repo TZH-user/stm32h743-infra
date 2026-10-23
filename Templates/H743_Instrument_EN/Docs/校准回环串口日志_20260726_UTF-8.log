@@ -1,0 +1,65 @@
+[TEST] USART1=COM3, 8000000 baud, 8N1
+[TEST] INTERNAL / DAC1_TO_ADC, nominal 0..3.0 V, 50 mV step, 25 ms dwell
+
+[RUN 1]
+[CTRL] CAL state=3 error=0 exclusive=1 progress=0 qspi=1 relay=1 adc=1 dac=1 can_start=1
+[CTRL] OK UI TAP CALSTART
+[CAL] LOOP START lower_mv=0 upper_mv=3000 step_mv=50 dwell_ms=25 samples=4096
+[CAL] POINT n=1 output_mv=0 mean=2047.253 min=2036 max=2060 low=0 high=0 dir=0 flags=0x0
+[CAL] POINT n=2 output_mv=50 mean=2038.591 min=2028 max=2053 low=0 high=0 dir=-1 flags=0x0
+[CAL] POINT n=3 output_mv=100 mean=2017.840 min=2008 max=2031 low=0 high=0 dir=-1 flags=0x0
+[CAL] POINT n=5 output_mv=200 mean=1977.015 min=1967 max=1990 low=0 high=0 dir=-1 flags=0x0
+[CAL] POINT n=10 output_mv=450 mean=1874.934 min=1865 max=1887 low=0 high=0 dir=-1 flags=0x0
+[CAL] POINT n=15 output_mv=700 mean=1772.484 min=1763 max=1787 low=0 high=0 dir=-1 flags=0x0
+[CAL] POINT n=20 output_mv=950 mean=1670.718 min=1660 max=1686 low=0 high=0 dir=-1 flags=0x0
+[CAL] POINT n=22 output_mv=1050 mean=1629.089 min=1618 max=1641 low=0 high=0 dir=-1 flags=0x0
+[CAL] POINT n=23 output_mv=1100 mean=1617.440 min=1607 max=1629 low=0 high=0 dir=-1 flags=0x0
+[CAL] POINT n=24 output_mv=1150 mean=1617.544 min=1607 max=1630 low=0 high=0 dir=-1 flags=0x0
+[CAL] POINT n=25 output_mv=1200 mean=1617.606 min=1606 max=1629 low=0 high=0 dir=-1 flags=0x0
+[CAL] POINT n=26 output_mv=1250 mean=1617.193 min=1606 max=1629 low=0 high=0 dir=-1 flags=0x8
+[CAL] STOP reason=transfer_plateau points=26 output_mv=1250 mean=1617.193 min=1606 max=1629
+[CAL] STATUS state=6 error=0 exclusive=1 can_start=1 active=0 reason=transfer_plateau points=26/61
+[CAL] LAST output_mv=1250 mean=1617.193 min=1606 max=1629 low=0 high=0 dir=-1 samples=4096 relay=0x0 dac_code=0 adc_run=0
+
+[RUN 2]
+[CTRL] CAL state=3 error=0 exclusive=1 progress=0 qspi=1 relay=1 adc=1 dac=1 can_start=1
+[CTRL] OK UI TAP CALSTART
+[CAL] LOOP START lower_mv=0 upper_mv=3000 step_mv=50 dwell_ms=25 samples=4096
+[CAL] POINT n=1 output_mv=0 mean=2047.534 min=2037 max=2059 low=0 high=0 dir=0 flags=0x0
+[CAL] POINT n=2 output_mv=50 mean=2038.926 min=2028 max=2054 low=0 high=0 dir=-1 flags=0x0
+[CAL] POINT n=3 output_mv=100 mean=2018.353 min=2006 max=2030 low=0 high=0 dir=-1 flags=0x0
+[CAL] POINT n=5 output_mv=200 mean=1977.499 min=1967 max=1989 low=0 high=0 dir=-1 flags=0x0
+[CAL] POINT n=10 output_mv=450 mean=1875.254 min=1865 max=1889 low=0 high=0 dir=-1 flags=0x0
+[CAL] POINT n=15 output_mv=700 mean=1772.907 min=1763 max=1786 low=0 high=0 dir=-1 flags=0x0
+[CAL] POINT n=20 output_mv=950 mean=1670.802 min=1661 max=1685 low=0 high=0 dir=-1 flags=0x0
+[CAL] POINT n=22 output_mv=1050 mean=1629.354 min=1618 max=1642 low=0 high=0 dir=-1 flags=0x0
+[CAL] POINT n=23 output_mv=1100 mean=1618.643 min=1607 max=1630 low=0 high=0 dir=-1 flags=0x0
+[CAL] POINT n=24 output_mv=1150 mean=1618.642 min=1608 max=1631 low=0 high=0 dir=-1 flags=0x0
+[CAL] POINT n=25 output_mv=1200 mean=1618.433 min=1606 max=1630 low=0 high=0 dir=-1 flags=0x0
+[CAL] POINT n=26 output_mv=1250 mean=1618.768 min=1609 max=1629 low=0 high=0 dir=-1 flags=0x8
+[CAL] STOP reason=transfer_plateau points=26 output_mv=1250 mean=1618.768 min=1609 max=1629
+[CAL] STATUS state=6 error=0 exclusive=1 can_start=1 active=0 reason=transfer_plateau points=26/61
+[CAL] LAST output_mv=1250 mean=1618.768 min=1609 max=1629 low=0 high=0 dir=-1 samples=4096 relay=0x0 dac_code=0 adc_run=0
+
+[FINAL BOOT]
+[CTRL] CAL state=0 error=0 exclusive=0 progress=0 qspi=1 relay=1 adc=1 dac=1 can_start=1
+[CAL] STATUS state=0 error=0 exclusive=0 can_start=1 active=0 reason=none points=0/0
+[CAL] LAST output_mv=0 mean=0.000 min=0 max=0 low=0 high=0 dir=0 samples=0 relay=0x0 dac_code=0 adc_run=0
+
+[GDB FINAL]
+GPIOC_ODR=0
+DAC1_DOR1=0
+CFSR=0
+HFSR=0
+AppDacOutput_running=false
+AD9226_running=false
+
+[SERIAL STOP ATTEMPT]
+CAL START was accepted and the loop became active.
+Five bounded CAL STOP attempts produced no confirmed OK UI TAP CALSTOP;
+responses included ERR CAL FORMAT and ERR UI TAP CALSTOP.
+Automatic transfer_plateau protection stopped the loop at 1.25 V nominal.
+[CAL] LAST output_mv=1250 mean=1619.562 min=1608 max=1632 low=0 high=0 dir=-1 samples=4096 relay=0x0 dac_code=0 adc_run=0
+[CTRL] OK UI PAGE MONITOR
+[CTRL] CAL state=0 error=0 exclusive=0 progress=0 qspi=1 relay=1 adc=1 dac=1 can_start=1
+[CTRL] RX bytes=212 chunks=20 dropped=0 lines=16 overflow=0 errors=9
